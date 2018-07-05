@@ -46,6 +46,7 @@ namespace Poseidon.Finance.Core.DAL.Mongo
             entity.Principal = doc["principal"].ToString();
             entity.Balance = doc["balance"].ToDecimal();
             entity.AvailableBalance = doc["availableBalance"].ToDecimal();
+            entity.DatasetCode = doc["datasetCode"].ToString();
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
@@ -66,6 +67,7 @@ namespace Poseidon.Finance.Core.DAL.Mongo
                 { "principal", entity.Principal },
                 { "balance", entity.Balance },
                 { "availableBalance", entity.AvailableBalance },
+                { "datasetCode", entity.DatasetCode },
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };

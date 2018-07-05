@@ -46,6 +46,12 @@ namespace Poseidon.Finance.Core.DL
         public decimal AvailableBalance { get; set; }
 
         /// <summary>
+        /// 数据集代码
+        /// </summary>
+        [Display(Name = "数据集代码")]
+        public string DatasetCode { get; set; }
+
+        /// <summary>
         /// 备注
         /// </summary>
         [Display(Name = "备注")]
