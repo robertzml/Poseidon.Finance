@@ -30,9 +30,11 @@ namespace Poseidon.Finance.ClientDx
         #endregion //Field
 
         #region Constructor
-        public FrmFundEdit()
+        public FrmFundEdit(string id)
         {
             InitializeComponent();
+
+            InitData(id);
         }
         #endregion //Constructor
 

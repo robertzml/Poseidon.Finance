@@ -37,6 +37,7 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.fundGrid = new Poseidon.Finance.ClientDx.FundGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -45,6 +46,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,6 +121,7 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.fundGrid);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 123);
             this.groupControl2.Name = "groupControl2";
@@ -145,6 +148,26 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // fundGrid
+            // 
+            this.fundGrid.AllowFilter = true;
+            this.fundGrid.AllowGroup = true;
+            this.fundGrid.AllowSort = true;
+            this.fundGrid.DataSource = null;
+            this.fundGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fundGrid.Editable = false;
+            this.fundGrid.EnableMasterView = false;
+            this.fundGrid.EnableMultiSelect = true;
+            this.fundGrid.Location = new System.Drawing.Point(2, 21);
+            this.fundGrid.Name = "fundGrid";
+            this.fundGrid.ShowAddMenu = false;
+            this.fundGrid.ShowFooter = false;
+            this.fundGrid.ShowLineNumber = true;
+            this.fundGrid.ShowMenu = false;
+            this.fundGrid.ShowNavigator = false;
+            this.fundGrid.Size = new System.Drawing.Size(721, 278);
+            this.fundGrid.TabIndex = 0;
+            // 
             // FrmFundList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -161,6 +184,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
@@ -177,5 +201,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private FundGrid fundGrid;
     }
 }
