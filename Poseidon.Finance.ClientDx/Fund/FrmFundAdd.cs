@@ -61,6 +61,7 @@ namespace Poseidon.Finance.ClientDx
             entity.Name = this.txtName.Text;
             entity.Number = this.txtNumber.Text;
             entity.Principal = this.txtPrincipal.Text;
+            entity.DatasetCode = this.txtDatasetCode.Text;
             entity.Remark = this.txtRemark.Text;
         }
         #endregion //Function
