@@ -36,6 +36,12 @@ namespace Poseidon.Finance.ClientDx
         {
             ChildFormManage.ShowDialogForm(typeof(FrmFundAdd));
         }
+        
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion //Event
     }
 }

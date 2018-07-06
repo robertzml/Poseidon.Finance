@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Finance.ClientDx
 {
-    partial class FrmFundAdd
+    partial class FrmFundEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -92,7 +92,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(334, 232);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "经费本信息";
             // 
             // layoutControl1
@@ -210,15 +210,15 @@
             this.layoutControlItem5.Text = "数据集代码";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // FrmFundAdd
+            // FrmFundEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 292);
             this.MaximumSize = new System.Drawing.Size(350, 330);
             this.MinimumSize = new System.Drawing.Size(350, 330);
-            this.Name = "FrmFundAdd";
-            this.Text = "添加经费本";
+            this.Name = "FrmFundEdit";
+            this.Text = "编辑经费本";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -246,6 +246,8 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.TextEdit txtDatasetCode;
+        private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.TextEdit txtPrincipal;
         private DevExpress.XtraEditors.TextEdit txtNumber;
         private DevExpress.XtraEditors.TextEdit txtName;
@@ -253,9 +255,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.TextEdit txtDatasetCode;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }
