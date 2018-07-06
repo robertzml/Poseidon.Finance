@@ -16,6 +16,24 @@ namespace Poseidon.Finance.Core.DL
     {
         #region Property
         /// <summary>
+        /// 经费本ID
+        /// </summary>
+        [Display(Name = "经费本ID")]
+        public string FundId { get; set; }
+
+        /// <summary>
+        /// 经费本名称
+        /// </summary>
+        [Display(Name = "经费本名称")]
+        public string FundName { get; set; }
+
+        /// <summary>
+        /// 经费本号
+        /// </summary>
+        [Display(Name = "经费本号")]
+        public string FundNumber { get; set; }
+
+        /// <summary>
         /// 摘要
         /// </summary>
         [Display(Name = "摘要")]

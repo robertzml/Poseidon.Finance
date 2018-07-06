@@ -38,6 +38,9 @@ namespace Poseidon.Finance.Core.DAL.Mongo
         {
             Expense entity = new Expense();
             entity.Id = doc["_id"].ToString();
+            entity.FundId = doc["fundId"].ToString();
+            entity.FundName = doc["fundName"].ToString();
+            entity.FundNumber = doc["fundNumber"].ToString();
             entity.Summary = doc["summary"].ToString();
             entity.Amount = doc["amount"].ToDecimal();
             entity.Operator = doc["operator"].ToString();
@@ -77,6 +80,9 @@ namespace Poseidon.Finance.Core.DAL.Mongo
         {
             BsonDocument doc = new BsonDocument
             {
+                { "fundId", entity.FundId },
+                { "fundName", entity.FundName },
+                { "fundNumber", entity.FundNumber },
                 { "summary", entity.Summary },
                 { "amount", entity.Amount },
                 { "operator", entity.Operator },
