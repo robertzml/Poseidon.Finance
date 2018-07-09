@@ -64,16 +64,28 @@ namespace Poseidon.Finance.Core.DL
         public bool IsWriteOff { get; set; }
 
         /// <summary>
-        /// 模块
+        /// 模块名称
         /// </summary>
-        [Display(Name = "模块")]
-        public string Module { get; set; }
+        [Display(Name = "模块名称")]
+        public string ModuleName { get; set; }
 
         /// <summary>
-        /// 关联对象ID
+        /// 程序集名称
         /// </summary>
-        [Display(Name = "关联对象ID")]
-        public string EntityId { get; set; }
+        [Display(Name = "程序集名称")]
+        public string AssemblyName { get; set; }
+
+        /// <summary>
+        /// 集合名称
+        /// </summary>
+        [Display(Name = "集合名称")]
+        public string CollectionName { get; set; }
+
+        /// <summary>
+        /// 文档ID
+        /// </summary>
+        [Display(Name = "文档ID")]
+        public string DocumentId { get; set; }
         #endregion //Property
     }
 }

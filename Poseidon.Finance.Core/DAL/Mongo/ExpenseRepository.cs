@@ -46,8 +46,10 @@ namespace Poseidon.Finance.Core.DAL.Mongo
             entity.Operator = doc["operator"].ToString();
             entity.ExpenseDate = doc["expenseDate"].ToLocalTime();
             entity.IsWriteOff = doc["isWriteOff"].ToBoolean();
-            entity.Module = doc["module"].ToString();
-            entity.EntityId = doc["entityId"].ToString();
+            entity.ModuleName = doc["moduleName"].ToString();
+            entity.AssemblyName = doc["assemblyName"].ToString();
+            entity.CollectionName = doc["collectionName"].ToString();
+            entity.DocumentId = doc["documentId"].ToString();
 
             var createBy = doc["createBy"].ToBsonDocument();
             entity.CreateBy = new UpdateStamp
@@ -88,8 +90,10 @@ namespace Poseidon.Finance.Core.DAL.Mongo
                 { "operator", entity.Operator },
                 { "expenseDate", entity.ExpenseDate },
                 { "isWriteOff", entity.IsWriteOff },
-                { "module", entity.Module },
-                { "entityId", entity.Id },
+                { "moduleName", entity.ModuleName },
+                { "assemblyName", entity.AssemblyName },
+                { "collectionName", entity.CollectionName },
+                { "documentId", entity.DocumentId },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },

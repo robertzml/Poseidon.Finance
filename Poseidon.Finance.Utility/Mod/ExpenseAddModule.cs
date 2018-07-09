@@ -10,7 +10,12 @@ using System.Windows.Forms;
 
 namespace Poseidon.Finance.Utility
 {
+    using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
+    using Poseidon.Common;
+    using Poseidon.Finance.Core.BL;
     using Poseidon.Finance.Core.DL;
+    using Poseidon.Winform.Base;
 
     /// <summary>
     /// 增加用款记录模块
@@ -22,6 +27,11 @@ namespace Poseidon.Finance.Utility
         /// 用款信息
         /// </summary>
         private Expense expense;
+
+        /// <summary>
+        /// 当前关联用户
+        /// </summary>
+        private LoginUser currentUser;
         #endregion //Field
 
         #region Constructor
@@ -35,10 +45,51 @@ namespace Poseidon.Finance.Utility
 
         #region Function
         /// <summary>
+        /// 设置实体
+        /// </summary>
+        /// <param name="entity"></param>
+        private void SetEntity(Expense entity)
+        {
+            var fund = this.luFund.GetSelectedDataRow() as Fund;
+            entity.FundId = fund.Id;
+            entity.FundName = fund.Name;
+            entity.FundNumber = fund.Number;
+
+            entity.Summary = this.txtSummary.Text;
+            entity.Amount = this.spAmount.Value;
+            entity.Operator = this.txtOperator.Text;
+            entity.ExpenseDate = this.dpExpenseDate.DateTime;
+            entity.Remark = this.txtRemark.Text;
+        }
+        #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        public void Init(LoginUser currentUser)
+        {
+            this.currentUser = currentUser;
+            this.bsFund.DataSource = BusinessFactory<FundBusiness>.Instance.FindAll().ToList();
+        }
+
+        /// <summary>
+        /// 更新数据
+        /// </summary>
+        //public void UpdateData()
+        //{
+        //    this.expense.Summary = this.txtSummary.Text;
+        //    this.expense.Amount = this.spAmount.Value;
+        //    this.expense.Operator = this.txtOperator.Text;
+        //    this.expense.ExpenseDate = this.dpExpenseDate.DateTime;
+        //    this.expense.Remark = this.txtRemark.Text;
+        //}
+
+        /// <summary>
         /// 输入检查
         /// </summary>
         /// <returns></returns>
-        private Tuple<bool, string> CheckInput()
+        public Tuple<bool, string> CheckInput()
         {
             string errorMessage = "";
 
@@ -60,27 +111,35 @@ namespace Poseidon.Finance.Utility
 
             return new Tuple<bool, string>(true, "");
         }
-        #endregion //Function
-
-        #region Method
-        /// <summary>
-        /// 初始化
-        /// </summary>
-        public void Init()
-        {
-
-        }
 
         /// <summary>
-        /// 更新数据
+        /// 保存数据
         /// </summary>
-        public void UpdateData()
+        /// <returns></returns>
+        public bool SaveData()
         {
-            this.expense.Summary = this.txtSummary.Text;
-            this.expense.Amount = this.spAmount.Value;
-            this.expense.Operator = this.txtOperator.Text;
-            this.expense.ExpenseDate = this.dpExpenseDate.DateTime;
-            this.expense.Remark = this.txtRemark.Text;
+            var input = CheckInput();
+            if (!input.Item1)
+            {
+                MessageUtil.ShowError(input.Item2);
+                return false;
+            }
+
+            try
+            {
+                Expense entity = new Expense();
+                SetEntity(entity);
+
+                BusinessFactory<ExpenseBusiness>.Instance.Create(entity, this.currentUser);
+
+                return true;
+            }
+            catch (PoseidonException pe)
+            {
+                Logger.Instance.Exception("新增付款记录失败", pe);
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+                return false;
+            }
         }
         #endregion //Method
 
