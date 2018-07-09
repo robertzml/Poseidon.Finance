@@ -65,6 +65,12 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Expense\FrmExpenseOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseOverview.Designer.cs">
+      <DependentUpon>FrmExpenseOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fund\FrmFundEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Expense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Fund.datasource" />
     <None Include="Properties\licenses.licx" />
   </ItemGroup>
@@ -101,8 +108,15 @@
       <Project>{f9c23f38-a5f7-4853-8bd9-668731c49550}</Project>
       <Name>Poseidon.Finance.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Poseidon.Finance.Utility\Poseidon.Finance.Utility.csproj">
+      <Project>{CFE8BB09-869F-4401-B5F1-5C97323261EC}</Project>
+      <Name>Poseidon.Finance.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Expense\FrmExpenseOverview.resx">
+      <DependentUpon>FrmExpenseOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fund\FrmFundAdd.resx">
       <DependentUpon>FrmFundAdd.cs</DependentUpon>
     </EmbeddedResource>

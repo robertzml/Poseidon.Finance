@@ -42,6 +42,8 @@ namespace Poseidon.Finance.Core.DAL.Mongo
             entity.FundName = doc["fundName"].ToString();
             entity.FundNumber = doc["fundNumber"].ToString();
             entity.Summary = doc["summary"].ToString();
+            entity.CategoryNumber = doc["categoryNumber"].ToString();
+            entity.CategoryName = doc["categoryName"].ToString();
             entity.Amount = doc["amount"].ToDecimal();
             entity.Operator = doc["operator"].ToString();
             entity.ExpenseDate = doc["expenseDate"].ToLocalTime();
@@ -86,6 +88,8 @@ namespace Poseidon.Finance.Core.DAL.Mongo
                 { "fundName", entity.FundName },
                 { "fundNumber", entity.FundNumber },
                 { "summary", entity.Summary },
+                { "categoryNumber", entity.CategoryNumber },
+                { "categoryName", entity.CategoryName },
                 { "amount", entity.Amount },
                 { "operator", entity.Operator },
                 { "expenseDate", entity.ExpenseDate },

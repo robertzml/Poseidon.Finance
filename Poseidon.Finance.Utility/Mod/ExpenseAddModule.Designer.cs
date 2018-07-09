@@ -31,10 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.luCategory = new DevExpress.XtraEditors.LookUpEdit();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.dpExpenseDate = new DevExpress.XtraEditors.DateEdit();
             this.txtOperator = new DevExpress.XtraEditors.TextEdit();
             this.luFund = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             this.spAmount = new DevExpress.XtraEditors.SpinEdit();
             this.txtSummary = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -44,16 +46,18 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.luCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -63,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -77,6 +81,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.luCategory);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.dpExpenseDate);
             this.layoutControl1.Controls.Add(this.txtOperator);
@@ -90,6 +95,18 @@
             this.layoutControl1.Size = new System.Drawing.Size(510, 279);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // luCategory
+            // 
+            this.luCategory.Location = new System.Drawing.Point(307, 60);
+            this.luCategory.Name = "luCategory";
+            this.luCategory.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.luCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luCategory.Properties.NullText = "请选择";
+            this.luCategory.Size = new System.Drawing.Size(191, 20);
+            this.luCategory.StyleController = this.layoutControl1;
+            this.luCategory.TabIndex = 10;
             // 
             // txtRemark
             // 
@@ -116,7 +133,7 @@
             // 
             // txtOperator
             // 
-            this.txtOperator.Location = new System.Drawing.Point(307, 60);
+            this.txtOperator.Location = new System.Drawing.Point(307, 84);
             this.txtOperator.Name = "txtOperator";
             this.txtOperator.Size = new System.Drawing.Size(191, 20);
             this.txtOperator.StyleController = this.layoutControl1;
@@ -143,6 +160,10 @@
             this.luFund.Size = new System.Drawing.Size(435, 20);
             this.luFund.StyleController = this.layoutControl1;
             this.luFund.TabIndex = 6;
+            // 
+            // bsFund
+            // 
+            this.bsFund.DataSource = typeof(Poseidon.Finance.Core.DL.Fund);
             // 
             // spAmount
             // 
@@ -177,7 +198,8 @@
             this.layoutControlItem2,
             this.layoutControlItem4,
             this.layoutControlItem5,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem7});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(510, 279);
@@ -213,9 +235,9 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtOperator;
-            this.layoutControlItem4.Location = new System.Drawing.Point(244, 48);
+            this.layoutControlItem4.Location = new System.Drawing.Point(244, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(246, 48);
+            this.layoutControlItem4.Size = new System.Drawing.Size(246, 24);
             this.layoutControlItem4.Text = "经办人";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -237,9 +259,14 @@
             this.layoutControlItem6.Text = "备注";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // bsFund
+            // layoutControlItem7
             // 
-            this.bsFund.DataSource = typeof(Poseidon.Finance.Core.DL.Fund);
+            this.layoutControlItem7.Control = this.luCategory;
+            this.layoutControlItem7.Location = new System.Drawing.Point(244, 48);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(246, 24);
+            this.layoutControlItem7.Text = "分类";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(48, 14);
             // 
             // ExpenseAddModule
             // 
@@ -252,11 +279,13 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.luCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -266,7 +295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,5 +318,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private System.Windows.Forms.BindingSource bsFund;
+        private DevExpress.XtraEditors.LookUpEdit luCategory;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

@@ -21,5 +21,16 @@ namespace Poseidon.Finance.Utility
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Method
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="documentId">文档ID</param>
+        public virtual void Init(string documentId)
+        {
+
+        }
+        #endregion //Method
     }
 }

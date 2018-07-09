@@ -31,13 +31,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.经费本管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFundList = new System.Windows.Forms.ToolStripMenuItem();
+            this.用款管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuExpenseOv = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.经费本管理ToolStripMenuItem});
+            this.经费本管理ToolStripMenuItem,
+            this.用款管理ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 25);
@@ -55,9 +58,24 @@
             // menuFundList
             // 
             this.menuFundList.Name = "menuFundList";
-            this.menuFundList.Size = new System.Drawing.Size(152, 22);
+            this.menuFundList.Size = new System.Drawing.Size(136, 22);
             this.menuFundList.Text = "经费本列表";
             this.menuFundList.Click += new System.EventHandler(this.menuFundList_Click);
+            // 
+            // 用款管理ToolStripMenuItem
+            // 
+            this.用款管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuExpenseOv});
+            this.用款管理ToolStripMenuItem.Name = "用款管理ToolStripMenuItem";
+            this.用款管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.用款管理ToolStripMenuItem.Text = "用款管理";
+            // 
+            // menuExpenseOv
+            // 
+            this.menuExpenseOv.Name = "menuExpenseOv";
+            this.menuExpenseOv.Size = new System.Drawing.Size(152, 22);
+            this.menuExpenseOv.Text = "用款总览";
+            this.menuExpenseOv.Click += new System.EventHandler(this.menuExpenseOv_Click);
             // 
             // MainForm
             // 
@@ -81,6 +99,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 经费本管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuFundList;
+        private System.Windows.Forms.ToolStripMenuItem 用款管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuExpenseOv;
     }
 }
 

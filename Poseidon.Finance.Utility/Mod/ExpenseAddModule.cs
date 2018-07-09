@@ -24,6 +24,26 @@ namespace Poseidon.Finance.Utility
     {
         #region Field
         /// <summary>
+        /// 模块名称
+        /// </summary>
+        private string moduleName;
+
+        /// <summary>
+        /// 程序集名称
+        /// </summary>
+        private string assemblyName;
+
+        /// <summary>
+        /// 集合名称
+        /// </summary>
+        private string collectionName;
+
+        /// <summary>
+        /// 文档ID
+        /// </summary>
+        private string documentId;
+
+        /// <summary>
         /// 用款信息
         /// </summary>
         private Expense expense;
@@ -57,9 +77,16 @@ namespace Poseidon.Finance.Utility
 
             entity.Summary = this.txtSummary.Text;
             entity.Amount = this.spAmount.Value;
+            entity.CategoryNumber = "";
+            entity.CategoryName = "";
             entity.Operator = this.txtOperator.Text;
             entity.ExpenseDate = this.dpExpenseDate.DateTime;
             entity.Remark = this.txtRemark.Text;
+
+            entity.ModuleName = this.moduleName;
+            entity.AssemblyName = this.assemblyName;
+            entity.CollectionName = this.collectionName;
+            entity.DocumentId = this.documentId;
         }
         #endregion //Function
 
@@ -67,9 +94,14 @@ namespace Poseidon.Finance.Utility
         /// <summary>
         /// 初始化
         /// </summary>
-        public void Init(LoginUser currentUser)
+        public void Init(string moduleName, string assemblyName, string collectionName, string documentId, LoginUser currentUser)
         {
+            this.moduleName = moduleName;
+            this.assemblyName = assemblyName;
+            this.collectionName = collectionName;
+            this.documentId = documentId;
             this.currentUser = currentUser;
+
             this.bsFund.DataSource = BusinessFactory<FundBusiness>.Instance.FindAll().ToList();
         }
 
@@ -132,6 +164,7 @@ namespace Poseidon.Finance.Utility
 
                 BusinessFactory<ExpenseBusiness>.Instance.Create(entity, this.currentUser);
 
+                this.expense = entity;
                 return true;
             }
             catch (PoseidonException pe)

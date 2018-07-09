@@ -58,6 +58,18 @@ namespace Poseidon.Finance.Core.DL
         public DateTime ExpenseDate { get; set; }
 
         /// <summary>
+        /// 分类码
+        /// </summary>
+        [Display(Name = "分类码")]
+        public string CategoryNumber { get; set; }
+
+        /// <summary>
+        /// 分类名称
+        /// </summary>
+        [Display(Name = "分类名称")]
+        public string CategoryName { get; set; }
+
+        /// <summary>
         /// 是否核销
         /// </summary>
         [Display(Name = "是否核销")]
