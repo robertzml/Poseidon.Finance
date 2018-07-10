@@ -66,12 +66,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\CategoryBusiness.cs" />
     <Compile Include="BL\ExpenseBusiness.cs" />
     <Compile Include="BL\FundBusiness.cs" />
+    <Compile Include="DAL\Mongo\CategoryRepository.cs" />
     <Compile Include="DAL\Mongo\ExpenseRepository.cs" />
     <Compile Include="DAL\Mongo\FundRepository.cs" />
+    <Compile Include="DL\Category.cs" />
     <Compile Include="DL\Expense.cs" />
     <Compile Include="DL\Fund.cs" />
+    <Compile Include="IDAL\ICategoryRepository.cs" />
     <Compile Include="IDAL\IExpenseRepository.cs" />
     <Compile Include="IDAL\IFundRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
