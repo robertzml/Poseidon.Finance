@@ -175,6 +175,7 @@
             this.treeListLookUpEdit1TreeList.Location = new System.Drawing.Point(0, 0);
             this.treeListLookUpEdit1TreeList.Name = "treeListLookUpEdit1TreeList";
             this.treeListLookUpEdit1TreeList.OptionsBehavior.EnableFiltering = true;
+            this.treeListLookUpEdit1TreeList.OptionsBehavior.PopulateServiceColumns = true;
             this.treeListLookUpEdit1TreeList.OptionsView.ShowIndentAsRowStyle = true;
             this.treeListLookUpEdit1TreeList.ParentFieldName = "ParentId";
             this.treeListLookUpEdit1TreeList.Size = new System.Drawing.Size(400, 200);
@@ -186,8 +187,8 @@
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
-            this.colName.Width = 96;
+            this.colName.VisibleIndex = 0;
+            this.colName.Width = 228;
             // 
             // colNumber
             // 
@@ -195,8 +196,8 @@
             this.colNumber.FieldName = "Number";
             this.colNumber.Name = "colNumber";
             this.colNumber.Visible = true;
-            this.colNumber.VisibleIndex = 0;
-            this.colNumber.Width = 96;
+            this.colNumber.VisibleIndex = 1;
+            this.colNumber.Width = 229;
             // 
             // colRemark
             // 
@@ -205,7 +206,7 @@
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
             this.colRemark.VisibleIndex = 2;
-            this.colRemark.Width = 96;
+            this.colRemark.Width = 228;
             // 
             // colStatus
             // 

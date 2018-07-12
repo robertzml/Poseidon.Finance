@@ -77,8 +77,10 @@ namespace Poseidon.Finance.Utility
 
             entity.Summary = this.txtSummary.Text;
             entity.Amount = this.spAmount.Value;
-            entity.CategoryNumber = "";
-            entity.CategoryName = "";
+
+            var category = this.tluCategory.GetSelectedDataRow() as Category;
+            entity.CategoryNumber = category.Number;
+            entity.CategoryName = category.Name;
             entity.Operator = this.txtOperator.Text;
             entity.ExpenseDate = this.dpExpenseDate.DateTime;
             entity.Remark = this.txtRemark.Text;
@@ -102,7 +104,8 @@ namespace Poseidon.Finance.Utility
             this.documentId = documentId;
             this.currentUser = currentUser;
 
-            this.bsFund.DataSource = BusinessFactory<FundBusiness>.Instance.FindAll().ToList();
+            this.bsFund.DataSource = BusinessFactory<FundBusiness>.Instance.FindAll();
+            this.bsCategory.DataSource = BusinessFactory<CategoryBusiness>.Instance.FindAll();
         }
 
         /// <summary>
@@ -133,6 +136,11 @@ namespace Poseidon.Finance.Utility
             if (string.IsNullOrEmpty(this.txtSummary.Text.Trim()))
             {
                 errorMessage = "摘要不能为空";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
+            if (this.tluCategory.EditValue == null)
+            {
+                errorMessage = "请选择费用分类";
                 return new Tuple<bool, string>(false, errorMessage);
             }
             if (this.dpExpenseDate.EditValue == null)

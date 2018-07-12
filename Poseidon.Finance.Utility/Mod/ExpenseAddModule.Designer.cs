@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.luCategory = new DevExpress.XtraEditors.LookUpEdit();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.dpExpenseDate = new DevExpress.XtraEditors.DateEdit();
             this.txtOperator = new DevExpress.XtraEditors.TextEdit();
             this.luFund = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
+            this.bsFund = new System.Windows.Forms.BindingSource();
             this.spAmount = new DevExpress.XtraEditors.SpinEdit();
             this.txtSummary = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -46,12 +44,18 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tluCategory = new DevExpress.XtraEditors.TreeListLookUpEdit();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
+            this.bsCategory = new System.Windows.Forms.BindingSource();
+            this.colNumber = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colSort = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.luCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties)).BeginInit();
@@ -67,7 +71,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tluCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -81,7 +88,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.luCategory);
+            this.layoutControl1.Controls.Add(this.tluCategory);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.dpExpenseDate);
             this.layoutControl1.Controls.Add(this.txtOperator);
@@ -95,18 +102,6 @@
             this.layoutControl1.Size = new System.Drawing.Size(510, 279);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // luCategory
-            // 
-            this.luCategory.Location = new System.Drawing.Point(307, 60);
-            this.luCategory.Name = "luCategory";
-            this.luCategory.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.luCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luCategory.Properties.NullText = "请选择";
-            this.luCategory.Size = new System.Drawing.Size(191, 20);
-            this.luCategory.StyleController = this.layoutControl1;
-            this.luCategory.TabIndex = 10;
             // 
             // txtRemark
             // 
@@ -127,15 +122,15 @@
             this.dpExpenseDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpExpenseDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpExpenseDate.Size = new System.Drawing.Size(189, 20);
+            this.dpExpenseDate.Size = new System.Drawing.Size(190, 20);
             this.dpExpenseDate.StyleController = this.layoutControl1;
             this.dpExpenseDate.TabIndex = 8;
             // 
             // txtOperator
             // 
-            this.txtOperator.Location = new System.Drawing.Point(307, 84);
+            this.txtOperator.Location = new System.Drawing.Point(308, 84);
             this.txtOperator.Name = "txtOperator";
-            this.txtOperator.Size = new System.Drawing.Size(191, 20);
+            this.txtOperator.Size = new System.Drawing.Size(190, 20);
             this.txtOperator.StyleController = this.layoutControl1;
             this.txtOperator.TabIndex = 7;
             // 
@@ -176,7 +171,7 @@
             this.spAmount.Name = "spAmount";
             this.spAmount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spAmount.Size = new System.Drawing.Size(189, 20);
+            this.spAmount.Size = new System.Drawing.Size(190, 20);
             this.spAmount.StyleController = this.layoutControl1;
             this.spAmount.TabIndex = 5;
             // 
@@ -196,10 +191,10 @@
             this.layoutControlItem1,
             this.layoutControlItem3,
             this.layoutControlItem2,
-            this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(510, 279);
@@ -228,16 +223,16 @@
             this.layoutControlItem2.Control = this.spAmount;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(244, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(245, 24);
             this.layoutControlItem2.Text = "金额(元)";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtOperator;
-            this.layoutControlItem4.Location = new System.Drawing.Point(244, 72);
+            this.layoutControlItem4.Location = new System.Drawing.Point(245, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(246, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(245, 24);
             this.layoutControlItem4.Text = "经办人";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -246,7 +241,7 @@
             this.layoutControlItem5.Control = this.dpExpenseDate;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(244, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(245, 24);
             this.layoutControlItem5.Text = "用款日期";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -259,14 +254,84 @@
             this.layoutControlItem6.Text = "备注";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
             // 
+            // tluCategory
+            // 
+            this.tluCategory.Location = new System.Drawing.Point(308, 60);
+            this.tluCategory.Name = "tluCategory";
+            this.tluCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tluCategory.Properties.DataSource = this.bsCategory;
+            this.tluCategory.Properties.DisplayMember = "Number";
+            this.tluCategory.Properties.NullText = "请选择";
+            this.tluCategory.Properties.TreeList = this.treeListLookUpEdit1TreeList;
+            this.tluCategory.Properties.ValueMember = "Id";
+            this.tluCategory.Size = new System.Drawing.Size(190, 20);
+            this.tluCategory.StyleController = this.layoutControl1;
+            this.tluCategory.TabIndex = 10;
+            // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.luCategory;
-            this.layoutControlItem7.Location = new System.Drawing.Point(244, 48);
+            this.layoutControlItem7.Control = this.tluCategory;
+            this.layoutControlItem7.Location = new System.Drawing.Point(245, 48);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(246, 24);
-            this.layoutControlItem7.Text = "分类";
+            this.layoutControlItem7.Size = new System.Drawing.Size(245, 24);
+            this.layoutControlItem7.Text = "费用分类";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // treeListLookUpEdit1TreeList
+            // 
+            this.treeListLookUpEdit1TreeList.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.colName,
+            this.colNumber,
+            this.colRemark,
+            this.colSort});
+            this.treeListLookUpEdit1TreeList.DataSource = this.bsCategory;
+            this.treeListLookUpEdit1TreeList.KeyFieldName = "Id";
+            this.treeListLookUpEdit1TreeList.Location = new System.Drawing.Point(0, 0);
+            this.treeListLookUpEdit1TreeList.Name = "treeListLookUpEdit1TreeList";
+            this.treeListLookUpEdit1TreeList.OptionsBehavior.EnableFiltering = true;
+            this.treeListLookUpEdit1TreeList.OptionsBehavior.PopulateServiceColumns = true;
+            this.treeListLookUpEdit1TreeList.OptionsView.ShowIndentAsRowStyle = true;
+            this.treeListLookUpEdit1TreeList.ParentFieldName = "ParentId";
+            this.treeListLookUpEdit1TreeList.Size = new System.Drawing.Size(400, 200);
+            this.treeListLookUpEdit1TreeList.TabIndex = 0;
+            // 
+            // bsCategory
+            // 
+            this.bsCategory.DataSource = typeof(Poseidon.Finance.Core.DL.Category);
+            // 
+            // colNumber
+            // 
+            this.colNumber.Caption = "分类号";
+            this.colNumber.FieldName = "Number";
+            this.colNumber.Name = "colNumber";
+            this.colNumber.Visible = true;
+            this.colNumber.VisibleIndex = 1;
+            this.colNumber.Width = 229;
+            // 
+            // colSort
+            // 
+            this.colSort.FieldName = "Sort";
+            this.colSort.Name = "colSort";
+            this.colSort.Width = 77;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "名称";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            this.colName.Width = 228;
+            // 
+            // colRemark
+            // 
+            this.colRemark.Caption = "备注";
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 2;
+            this.colRemark.Width = 228;
             // 
             // ExpenseAddModule
             // 
@@ -279,7 +344,6 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.luCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties)).EndInit();
@@ -295,7 +359,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tluCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -318,7 +385,13 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private System.Windows.Forms.BindingSource bsFund;
-        private DevExpress.XtraEditors.LookUpEdit luCategory;
+        private DevExpress.XtraEditors.TreeListLookUpEdit tluCategory;
+        private System.Windows.Forms.BindingSource bsCategory;
+        private DevExpress.XtraTreeList.TreeList treeListLookUpEdit1TreeList;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colNumber;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colSort;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }
