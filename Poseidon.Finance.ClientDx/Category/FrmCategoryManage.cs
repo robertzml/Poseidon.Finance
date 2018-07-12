@@ -23,7 +23,25 @@ namespace Poseidon.Finance.ClientDx
             InitializeComponent();
         }
         #endregion //Constructor
-        
+
+        #region Function
+        protected override void InitForm()
+        {
+            this.trCategory.Init();
+            this.trCategory.Expand();
+
+            base.InitForm();
+        }
+
+        /// <summary>
+        /// 载入费用分类
+        /// </summary>
+        private void LoadCategory()
+        {
+            this.trCategory.RefreshData();
+        }
+        #endregion //Function
+
         #region Event
         /// <summary>
         /// 新增费用分类
@@ -33,6 +51,7 @@ namespace Poseidon.Finance.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmCategoryAdd));
+            LoadCategory();
         }
         #endregion //Event
     }
