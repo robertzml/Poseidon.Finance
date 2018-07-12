@@ -26,6 +26,12 @@ namespace Poseidon.Finance.Core.DL
         /// </summary>
         [Display(Name = "上级ID")]
         public string ParentId { get; set; }
+
+        /// <summary>
+        /// 排序码
+        /// </summary>
+        [Display(Name = "排序码")]
+        public int Sort { get; set; }
         #endregion //Property
     }
 }

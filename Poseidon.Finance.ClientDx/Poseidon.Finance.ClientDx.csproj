@@ -38,6 +38,7 @@
     <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Poseidon.Base">
       <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
     </Reference>
@@ -71,6 +72,18 @@
     <Compile Include="Expense\FrmExpenseOverview.Designer.cs">
       <DependentUpon>FrmExpenseOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Category\FrmCategoryManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\FrmCategoryManage.Designer.cs">
+      <DependentUpon>FrmCategoryManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\FrmCategoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\FrmCategoryAdd.Designer.cs">
+      <DependentUpon>FrmCategoryAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fund\FrmFundEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +111,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Category.datasource" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Expense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Fund.datasource" />
     <None Include="Properties\licenses.licx" />
@@ -114,6 +128,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Category\FrmCategoryAdd.resx">
+      <DependentUpon>FrmCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\FrmCategoryManage.resx">
+      <DependentUpon>FrmCategoryManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseOverview.resx">
       <DependentUpon>FrmExpenseOverview.cs</DependentUpon>
     </EmbeddedResource>

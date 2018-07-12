@@ -41,6 +41,7 @@ namespace Poseidon.Finance.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
             entity.Number = doc["number"].ToString();
+            entity.Sort = doc["sort"].ToInt32();
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
@@ -61,6 +62,7 @@ namespace Poseidon.Finance.Core.DAL.Mongo
             {
                 { "name", entity.Name },
                 { "number", entity.Number },
+                { "sort", entity.Sort },
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };

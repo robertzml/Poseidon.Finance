@@ -25,5 +25,16 @@ namespace Poseidon.Finance.Core.BL
             this.baseDal = RepositoryFactory<ICategoryRepository>.Instance;
         }
         #endregion //Constructor
+
+        #region Method
+        /// <summary>
+        /// 获取所有费用分类
+        /// </summary>
+        /// <returns></returns>
+        public override IEnumerable<Category> FindAll()
+        {
+            return base.FindAll().OrderBy(r => r.Sort);
+        }
+        #endregion //Method
     }
 }

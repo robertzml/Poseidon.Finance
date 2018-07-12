@@ -33,6 +33,8 @@
             this.menuFundList = new System.Windows.Forms.ToolStripMenuItem();
             this.用款管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseOv = new System.Windows.Forms.ToolStripMenuItem();
+            this.费用分类管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCategoryMan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +42,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.经费本管理ToolStripMenuItem,
-            this.用款管理ToolStripMenuItem});
+            this.用款管理ToolStripMenuItem,
+            this.费用分类管理ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 25);
@@ -73,9 +76,24 @@
             // menuExpenseOv
             // 
             this.menuExpenseOv.Name = "menuExpenseOv";
-            this.menuExpenseOv.Size = new System.Drawing.Size(152, 22);
+            this.menuExpenseOv.Size = new System.Drawing.Size(124, 22);
             this.menuExpenseOv.Text = "用款总览";
             this.menuExpenseOv.Click += new System.EventHandler(this.menuExpenseOv_Click);
+            // 
+            // 费用分类管理ToolStripMenuItem
+            // 
+            this.费用分类管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCategoryMan});
+            this.费用分类管理ToolStripMenuItem.Name = "费用分类管理ToolStripMenuItem";
+            this.费用分类管理ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.费用分类管理ToolStripMenuItem.Text = "费用分类管理";
+            // 
+            // menuCategoryMan
+            // 
+            this.menuCategoryMan.Name = "menuCategoryMan";
+            this.menuCategoryMan.Size = new System.Drawing.Size(152, 22);
+            this.menuCategoryMan.Text = "费用分类管理";
+            this.menuCategoryMan.Click += new System.EventHandler(this.menuCategoryMan_Click);
             // 
             // MainForm
             // 
@@ -101,6 +119,8 @@
         private System.Windows.Forms.ToolStripMenuItem menuFundList;
         private System.Windows.Forms.ToolStripMenuItem 用款管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuExpenseOv;
+        private System.Windows.Forms.ToolStripMenuItem 费用分类管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuCategoryMan;
     }
 }
 
