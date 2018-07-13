@@ -78,6 +78,11 @@ namespace Poseidon.Finance.ClientDx
             entity.Operator = this.txtOperator.Text;
             entity.ExpenseDate = this.dpExpenseDate.DateTime;
             entity.Remark = this.txtRemark.Text;
+
+            entity.ModuleName = "";
+            entity.AssemblyName = "";
+            entity.CollectionName = "";
+            entity.DocumentId = "";
         }
         #endregion //Function
 
@@ -97,6 +102,9 @@ namespace Poseidon.Finance.ClientDx
                 SetEntity(entity);
 
                 BusinessFactory<ExpenseBusiness>.Instance.Create(entity, this.currentUser);
+
+                MessageUtil.ShowInfo("保存成功");
+                this.Close();
             }
             catch (PoseidonException pe)
             {

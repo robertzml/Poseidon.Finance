@@ -13,32 +13,50 @@ namespace Poseidon.Finance.ClientDx
     using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
     using Poseidon.Finance.Core.BL;
+    using Poseidon.Finance.Core.DL;
 
     /// <summary>
-    /// 用款总览窗体
+    /// 用款管理窗体
     /// </summary>
-    public partial class FrmExpenseOverview : BaseMdiForm
+    public partial class FrmExpenseManage : BaseMdiForm
     {
         #region Constructor
-        public FrmExpenseOverview()
+        public FrmExpenseManage()
         {
             InitializeComponent();
         }
+
         #endregion //Constructor
 
         #region Function
         protected override void InitForm()
         {
-            LoadExpense();
+            LoadData();
 
             base.InitForm();
         }
 
-        private void LoadExpense()
+        /// <summary>
+        /// 载入数据
+        /// </summary>
+        private void LoadData()
         {
             var data = BusinessFactory<ExpenseBusiness>.Instance.FindAll();
             this.expenseGrid.DataSource = data.ToList();
         }
-        #endregion //Function
+        #endregion //Functio
+
+        #region Event
+        /// <summary>
+        /// 添加用款
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(FrmExpenseAdd));
+            LoadData();
+        }
+        #endregion //Event
     }
 }

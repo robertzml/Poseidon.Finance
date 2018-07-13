@@ -29,27 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.colFundId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFundName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFundNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuView = new System.Windows.Forms.ToolStripMenuItem();
+            this.colSerialNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSummary = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOperator = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colExpenseDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCategoryNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCategoryName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIsWriteOff = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOperator = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExpenseDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsPaid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModuleName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAssemblyName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCollectionName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDocumentId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCreateBy = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUpdateBy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuView = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -67,25 +63,21 @@
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colFundId,
-            this.colFundName,
-            this.colFundNumber,
+            this.colId,
+            this.colSerialNumber,
             this.colSummary,
             this.colAmount,
-            this.colOperator,
-            this.colExpenseDate,
             this.colCategoryNumber,
             this.colCategoryName,
-            this.colIsWriteOff,
+            this.colOperator,
+            this.colExpenseDate,
+            this.colIsPaid,
             this.colModuleName,
             this.colAssemblyName,
             this.colCollectionName,
             this.colDocumentId,
-            this.colCreateBy,
-            this.colUpdateBy,
             this.colRemark,
-            this.colStatus,
-            this.colId});
+            this.colStatus});
             this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
@@ -94,131 +86,6 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
-            // 
-            // colFundId
-            // 
-            this.colFundId.FieldName = "FundId";
-            this.colFundId.Name = "colFundId";
-            // 
-            // colFundName
-            // 
-            this.colFundName.FieldName = "FundName";
-            this.colFundName.Name = "colFundName";
-            this.colFundName.Visible = true;
-            this.colFundName.VisibleIndex = 0;
-            // 
-            // colFundNumber
-            // 
-            this.colFundNumber.FieldName = "FundNumber";
-            this.colFundNumber.Name = "colFundNumber";
-            this.colFundNumber.Visible = true;
-            this.colFundNumber.VisibleIndex = 1;
-            // 
-            // colSummary
-            // 
-            this.colSummary.FieldName = "Summary";
-            this.colSummary.Name = "colSummary";
-            this.colSummary.Visible = true;
-            this.colSummary.VisibleIndex = 2;
-            // 
-            // colAmount
-            // 
-            this.colAmount.FieldName = "Amount";
-            this.colAmount.Name = "colAmount";
-            this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 3;
-            // 
-            // colOperator
-            // 
-            this.colOperator.FieldName = "Operator";
-            this.colOperator.Name = "colOperator";
-            this.colOperator.Visible = true;
-            this.colOperator.VisibleIndex = 4;
-            // 
-            // colExpenseDate
-            // 
-            this.colExpenseDate.FieldName = "ExpenseDate";
-            this.colExpenseDate.Name = "colExpenseDate";
-            this.colExpenseDate.Visible = true;
-            this.colExpenseDate.VisibleIndex = 5;
-            // 
-            // colCategoryNumber
-            // 
-            this.colCategoryNumber.FieldName = "CategoryNumber";
-            this.colCategoryNumber.Name = "colCategoryNumber";
-            this.colCategoryNumber.Visible = true;
-            this.colCategoryNumber.VisibleIndex = 6;
-            // 
-            // colCategoryName
-            // 
-            this.colCategoryName.FieldName = "CategoryName";
-            this.colCategoryName.Name = "colCategoryName";
-            this.colCategoryName.Visible = true;
-            this.colCategoryName.VisibleIndex = 7;
-            // 
-            // colIsWriteOff
-            // 
-            this.colIsWriteOff.FieldName = "IsWriteOff";
-            this.colIsWriteOff.Name = "colIsWriteOff";
-            this.colIsWriteOff.Visible = true;
-            this.colIsWriteOff.VisibleIndex = 8;
-            // 
-            // colModuleName
-            // 
-            this.colModuleName.FieldName = "ModuleName";
-            this.colModuleName.Name = "colModuleName";
-            this.colModuleName.Visible = true;
-            this.colModuleName.VisibleIndex = 9;
-            // 
-            // colAssemblyName
-            // 
-            this.colAssemblyName.FieldName = "AssemblyName";
-            this.colAssemblyName.Name = "colAssemblyName";
-            this.colAssemblyName.Visible = true;
-            this.colAssemblyName.VisibleIndex = 10;
-            // 
-            // colCollectionName
-            // 
-            this.colCollectionName.FieldName = "CollectionName";
-            this.colCollectionName.Name = "colCollectionName";
-            this.colCollectionName.Visible = true;
-            this.colCollectionName.VisibleIndex = 11;
-            // 
-            // colDocumentId
-            // 
-            this.colDocumentId.FieldName = "DocumentId";
-            this.colDocumentId.Name = "colDocumentId";
-            this.colDocumentId.Visible = true;
-            this.colDocumentId.VisibleIndex = 12;
-            // 
-            // colCreateBy
-            // 
-            this.colCreateBy.FieldName = "CreateBy";
-            this.colCreateBy.Name = "colCreateBy";
-            // 
-            // colUpdateBy
-            // 
-            this.colUpdateBy.FieldName = "UpdateBy";
-            this.colUpdateBy.Name = "colUpdateBy";
-            // 
-            // colRemark
-            // 
-            this.colRemark.FieldName = "Remark";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 13;
-            // 
-            // colStatus
-            // 
-            this.colStatus.FieldName = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 14;
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
             // 
             // contextMenuStrip1
             // 
@@ -233,6 +100,123 @@
             this.menuView.Size = new System.Drawing.Size(100, 22);
             this.menuView.Text = "查看";
             this.menuView.Click += new System.EventHandler(this.menuView_Click);
+            // 
+            // colSerialNumber
+            // 
+            this.colSerialNumber.Caption = "流水号";
+            this.colSerialNumber.FieldName = "SerialNumber";
+            this.colSerialNumber.Name = "colSerialNumber";
+            this.colSerialNumber.Visible = true;
+            this.colSerialNumber.VisibleIndex = 0;
+            // 
+            // colSummary
+            // 
+            this.colSummary.Caption = "摘要";
+            this.colSummary.FieldName = "Summary";
+            this.colSummary.Name = "colSummary";
+            this.colSummary.Visible = true;
+            this.colSummary.VisibleIndex = 1;
+            // 
+            // colAmount
+            // 
+            this.colAmount.Caption = "金额";
+            this.colAmount.FieldName = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.Visible = true;
+            this.colAmount.VisibleIndex = 2;
+            // 
+            // colCategoryNumber
+            // 
+            this.colCategoryNumber.Caption = "分类号";
+            this.colCategoryNumber.FieldName = "CategoryNumber";
+            this.colCategoryNumber.Name = "colCategoryNumber";
+            this.colCategoryNumber.Visible = true;
+            this.colCategoryNumber.VisibleIndex = 3;
+            // 
+            // colCategoryName
+            // 
+            this.colCategoryName.Caption = "分类名称";
+            this.colCategoryName.FieldName = "CategoryName";
+            this.colCategoryName.Name = "colCategoryName";
+            this.colCategoryName.Visible = true;
+            this.colCategoryName.VisibleIndex = 4;
+            // 
+            // colOperator
+            // 
+            this.colOperator.Caption = "经办人";
+            this.colOperator.FieldName = "Operator";
+            this.colOperator.Name = "colOperator";
+            this.colOperator.Visible = true;
+            this.colOperator.VisibleIndex = 5;
+            // 
+            // colExpenseDate
+            // 
+            this.colExpenseDate.Caption = "用款日期";
+            this.colExpenseDate.FieldName = "ExpenseDate";
+            this.colExpenseDate.Name = "colExpenseDate";
+            this.colExpenseDate.Visible = true;
+            this.colExpenseDate.VisibleIndex = 6;
+            // 
+            // colIsPaid
+            // 
+            this.colIsPaid.Caption = "是否支付";
+            this.colIsPaid.FieldName = "IsPaid";
+            this.colIsPaid.Name = "colIsPaid";
+            this.colIsPaid.Visible = true;
+            this.colIsPaid.VisibleIndex = 7;
+            // 
+            // colModuleName
+            // 
+            this.colModuleName.Caption = "模块名称";
+            this.colModuleName.FieldName = "ModuleName";
+            this.colModuleName.Name = "colModuleName";
+            this.colModuleName.Visible = true;
+            this.colModuleName.VisibleIndex = 8;
+            // 
+            // colAssemblyName
+            // 
+            this.colAssemblyName.Caption = "程序集名称";
+            this.colAssemblyName.FieldName = "AssemblyName";
+            this.colAssemblyName.Name = "colAssemblyName";
+            this.colAssemblyName.Visible = true;
+            this.colAssemblyName.VisibleIndex = 9;
+            // 
+            // colCollectionName
+            // 
+            this.colCollectionName.Caption = "集合名称";
+            this.colCollectionName.FieldName = "CollectionName";
+            this.colCollectionName.Name = "colCollectionName";
+            this.colCollectionName.Visible = true;
+            this.colCollectionName.VisibleIndex = 10;
+            // 
+            // colDocumentId
+            // 
+            this.colDocumentId.Caption = "文档ID";
+            this.colDocumentId.FieldName = "DocumentId";
+            this.colDocumentId.Name = "colDocumentId";
+            this.colDocumentId.Visible = true;
+            this.colDocumentId.VisibleIndex = 11;
+            // 
+            // colRemark
+            // 
+            this.colRemark.Caption = "备注";
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 12;
+            // 
+            // colStatus
+            // 
+            this.colStatus.Caption = "状态";
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Visible = true;
+            this.colStatus.VisibleIndex = 13;
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
             // 
             // ExpenseGrid
             // 
@@ -251,27 +235,22 @@
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.Columns.GridColumn colFundId;
-        private DevExpress.XtraGrid.Columns.GridColumn colFundName;
-        private DevExpress.XtraGrid.Columns.GridColumn colFundNumber;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuView;
+        private DevExpress.XtraGrid.Columns.GridColumn colSerialNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colSummary;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
-        private DevExpress.XtraGrid.Columns.GridColumn colOperator;
-        private DevExpress.XtraGrid.Columns.GridColumn colExpenseDate;
         private DevExpress.XtraGrid.Columns.GridColumn colCategoryNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colCategoryName;
-        private DevExpress.XtraGrid.Columns.GridColumn colIsWriteOff;
+        private DevExpress.XtraGrid.Columns.GridColumn colOperator;
+        private DevExpress.XtraGrid.Columns.GridColumn colExpenseDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsPaid;
         private DevExpress.XtraGrid.Columns.GridColumn colModuleName;
         private DevExpress.XtraGrid.Columns.GridColumn colAssemblyName;
         private DevExpress.XtraGrid.Columns.GridColumn colCollectionName;
         private DevExpress.XtraGrid.Columns.GridColumn colDocumentId;
-        private DevExpress.XtraGrid.Columns.GridColumn colCreateBy;
-        private DevExpress.XtraGrid.Columns.GridColumn colUpdateBy;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuView;
     }
 }
