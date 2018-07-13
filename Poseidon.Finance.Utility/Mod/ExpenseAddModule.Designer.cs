@@ -41,7 +41,6 @@
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.dpExpenseDate = new DevExpress.XtraEditors.DateEdit();
             this.txtOperator = new DevExpress.XtraEditors.TextEdit();
-            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             this.spAmount = new DevExpress.XtraEditors.SpinEdit();
             this.txtSummary = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -51,6 +50,7 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -62,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -72,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -200,10 +200,6 @@
             this.txtOperator.StyleController = this.layoutControl1;
             this.txtOperator.TabIndex = 7;
             // 
-            // bsFund
-            // 
-            this.bsFund.DataSource = typeof(Poseidon.Finance.Core.DL.Fund);
-            // 
             // spAmount
             // 
             this.spAmount.EditValue = new decimal(new int[] {
@@ -239,7 +235,7 @@
             this.layoutControlItem7,
             this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(510, 279);
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -297,6 +293,10 @@
             this.layoutControlItem4.Text = "经办人";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
+            // bsFund
+            // 
+            this.bsFund.DataSource = typeof(Poseidon.Finance.Core.DL.Fund);
+            // 
             // ExpenseAddModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -315,7 +315,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -325,6 +324,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             this.ResumeLayout(false);
 
         }
