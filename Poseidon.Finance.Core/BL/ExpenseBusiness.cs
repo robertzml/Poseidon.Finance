@@ -47,7 +47,7 @@ namespace Poseidon.Finance.Core.BL
                 Time = DateTime.Now
             };
 
-            entity.IsWriteOff = false;
+            //entity.IsWriteOff = false;
             entity.Status = 0;
             base.Create(entity);
         }

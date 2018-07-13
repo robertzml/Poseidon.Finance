@@ -16,22 +16,10 @@ namespace Poseidon.Finance.Core.DL
     {
         #region Property
         /// <summary>
-        /// 经费本ID
+        /// 流水号
         /// </summary>
-        [Display(Name = "经费本ID")]
-        public string FundId { get; set; }
-
-        /// <summary>
-        /// 经费本名称
-        /// </summary>
-        [Display(Name = "经费本名称")]
-        public string FundName { get; set; }
-
-        /// <summary>
-        /// 经费本号
-        /// </summary>
-        [Display(Name = "经费本号")]
-        public string FundNumber { get; set; }
+        [Display(Name = "流水号")]
+        public string SerialNumber { get; set; }
 
         /// <summary>
         /// 摘要
@@ -46,21 +34,9 @@ namespace Poseidon.Finance.Core.DL
         public decimal Amount { get; set; }
 
         /// <summary>
-        /// 经办人
+        /// 分类号
         /// </summary>
-        [Display(Name = "经办人")]
-        public string Operator { get; set; }
-
-        /// <summary>
-        /// 用款日期
-        /// </summary>
-        [Display(Name = "用款日期")]
-        public DateTime ExpenseDate { get; set; }
-
-        /// <summary>
-        /// 分类码
-        /// </summary>
-        [Display(Name = "分类码")]
+        [Display(Name = "分类号")]
         public string CategoryNumber { get; set; }
 
         /// <summary>
@@ -70,10 +46,22 @@ namespace Poseidon.Finance.Core.DL
         public string CategoryName { get; set; }
 
         /// <summary>
-        /// 是否核销
+        /// 经办人
         /// </summary>
-        [Display(Name = "是否核销")]
-        public bool IsWriteOff { get; set; }
+        [Display(Name = "经办人")]
+        public string Operator { get; set; }
+
+        /// <summary>
+        /// 用款日期
+        /// </summary>
+        [Display(Name = "用款日期")]
+        public DateTime ExpenseDate { get; set; }    
+
+        /// <summary>
+        /// 是否支付
+        /// </summary>
+        [Display(Name = "是否支付")]
+        public bool IsPaid { get; set; }
 
         /// <summary>
         /// 模块名称

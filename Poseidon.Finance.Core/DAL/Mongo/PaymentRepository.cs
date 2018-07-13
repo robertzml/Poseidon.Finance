@@ -14,17 +14,17 @@ namespace Poseidon.Finance.Core.DAL.Mongo
     using Poseidon.Finance.Core.IDAL;
 
     /// <summary>
-    /// 用款数据访问类
+    /// 付款数据访问类
     /// </summary>
-    internal class ExpenseRepository : AbstractDALMongo<Expense>, IExpenseRepository
+    internal class PaymentRepository : AbstractDALMongo<Payment>, IPaymentRepository
     {
         #region Constructor
         /// <summary>
-        /// 用款数据访问类
+        /// 付款数据访问类
         /// </summary>
-        public ExpenseRepository()
+        public PaymentRepository()
         {
-            base.Init("finance_expense");
+            base.Init("finance_payment");
         }
         #endregion //Constructor
 
@@ -34,22 +34,30 @@ namespace Poseidon.Finance.Core.DAL.Mongo
         /// </summary>
         /// <param name="doc">Bson文档</param>
         /// <returns></returns>
-        protected override Expense DocToEntity(BsonDocument doc)
+        protected override Payment DocToEntity(BsonDocument doc)
         {
-            Expense entity = new Expense();
+            Payment entity = new Payment();
             entity.Id = doc["_id"].ToString();
             entity.SerialNumber = doc["serialNumber"].ToString();
+            entity.FundId = doc["fundId"].ToString();
+            entity.FundName = doc["fundName"].ToString();
+            entity.FundNumber = doc["fundNumber"].ToString();
             entity.Summary = doc["summary"].ToString();
-            entity.Amount = doc["amount"].ToDecimal();
-            entity.CategoryNumber = doc["categoryNumber"].ToString();
-            entity.CategoryName = doc["categoryName"].ToString();
-            entity.Operator = doc["operator"].ToString();
-            entity.ExpenseDate = doc["expenseDate"].ToLocalTime();
-            entity.IsPaid = doc["isPaid"].ToBoolean();
-            entity.ModuleName = doc["moduleName"].ToString();
-            entity.AssemblyName = doc["assemblyName"].ToString();
-            entity.CollectionName = doc["collectionName"].ToString();
-            entity.DocumentId = doc["documentId"].ToString();
+            entity.SumFee = doc["sumFee"].ToDecimal();
+            entity.Discount = doc["discount"].ToDecimal();
+            entity.Remission = doc["remission"].ToDecimal();
+            entity.PaidFee = doc["paidFee"].ToDecimal();
+            entity.PaidDate = doc["paidDate"].ToLocalTime();
+
+            entity.ExpenseIds = new List<string>();
+            if (doc.Contains("expenseIds"))
+            {
+                BsonArray array = doc["expenseIds"].AsBsonArray;
+                foreach (string item in array)
+                {
+                    entity.ExpenseIds.Add(item);
+                }
+            }
 
             var createBy = doc["createBy"].ToBsonDocument();
             entity.CreateBy = new UpdateStamp
@@ -78,22 +86,20 @@ namespace Poseidon.Finance.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        protected override BsonDocument EntityToDoc(Expense entity)
+        protected override BsonDocument EntityToDoc(Payment entity)
         {
             BsonDocument doc = new BsonDocument
             {
                 { "serialNumber", entity.SerialNumber },
+                { "fundId", entity.FundId },
+                { "fundName", entity.FundName },
+                { "fundNumber", entity.FundNumber },
                 { "summary", entity.Summary },
-                { "amount", entity.Amount },
-                { "categoryNumber", entity.CategoryNumber },
-                { "categoryName", entity.CategoryName },
-                { "operator", entity.Operator },
-                { "expenseDate", entity.ExpenseDate },
-                { "isPaid", entity.IsPaid },
-                { "moduleName", entity.ModuleName },
-                { "assemblyName", entity.AssemblyName },
-                { "collectionName", entity.CollectionName },
-                { "documentId", entity.DocumentId },
+                { "sumFee", entity.SumFee },
+                { "discount", entity.Discount },
+                { "remission", entity.Remission },
+                { "paidFee", entity.PaidFee },
+                { "paidDate", entity.PaidDate },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },
@@ -107,6 +113,17 @@ namespace Poseidon.Finance.Core.DAL.Mongo
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };
+
+            if (entity.ExpenseIds != null && entity.ExpenseIds.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.ExpenseIds)
+                {
+                    array.Add(item);
+                }
+
+                doc.Add("expenseIds", array);
+            }
 
             return doc;
         }

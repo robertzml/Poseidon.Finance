@@ -70,10 +70,10 @@ namespace Poseidon.Finance.Utility
         /// <param name="entity"></param>
         private void SetEntity(Expense entity)
         {
-            var fund = this.luFund.GetSelectedDataRow() as Fund;
-            entity.FundId = fund.Id;
-            entity.FundName = fund.Name;
-            entity.FundNumber = fund.Number;
+            //var fund = this.luFund.GetSelectedDataRow() as Fund;
+            //entity.FundId = fund.Id;
+            //entity.FundName = fund.Name;
+            //entity.FundNumber = fund.Number;
 
             entity.Summary = this.txtSummary.Text;
             entity.Amount = this.spAmount.Value;
@@ -127,12 +127,7 @@ namespace Poseidon.Finance.Utility
         public Tuple<bool, string> CheckInput()
         {
             string errorMessage = "";
-
-            if (this.luFund.EditValue == null)
-            {
-                errorMessage = "请选择经费本";
-                return new Tuple<bool, string>(false, errorMessage);
-            }
+         
             if (string.IsNullOrEmpty(this.txtSummary.Text.Trim()))
             {
                 errorMessage = "摘要不能为空";
