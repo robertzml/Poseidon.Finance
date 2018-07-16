@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Finance.ClientDx
 {
-    partial class FrmExpenseAdd
+    partial class FrmExpenseEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,6 @@
             this.txtOperator = new DevExpress.XtraEditors.TextEdit();
             this.dpExpenseDate = new DevExpress.XtraEditors.DateEdit();
             this.tluCategory = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsCategory = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colNumber = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -51,6 +50,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bsCategory = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -64,7 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluCategory.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).BeginInit();
@@ -75,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -107,7 +107,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(454, 242);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "用款信息";
             // 
             // layoutControl1
@@ -170,10 +170,6 @@
             this.tluCategory.Size = new System.Drawing.Size(160, 20);
             this.tluCategory.StyleController = this.layoutControl1;
             this.tluCategory.TabIndex = 6;
-            // 
-            // bsCategory
-            // 
-            this.bsCategory.DataSource = typeof(Poseidon.Finance.Core.DL.Category);
             // 
             // treeListLookUpEdit1TreeList
             // 
@@ -326,15 +322,19 @@
             this.layoutControlItem6.Text = "备注";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // FrmExpenseAdd
+            // bsCategory
+            // 
+            this.bsCategory.DataSource = typeof(Poseidon.Finance.Core.DL.Category);
+            // 
+            // FrmExpenseEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 302);
             this.MaximumSize = new System.Drawing.Size(470, 340);
             this.MinimumSize = new System.Drawing.Size(470, 340);
-            this.Name = "FrmExpenseAdd";
-            this.Text = "新增用款";
+            this.Name = "FrmExpenseEdit";
+            this.Text = "编辑用款";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -348,7 +348,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluCategory.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).EndInit();
@@ -359,6 +358,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -367,25 +367,25 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.TextEdit txtSummary;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.TreeListLookUpEdit tluCategory;
-        private DevExpress.XtraTreeList.TreeList treeListLookUpEdit1TreeList;
-        private DevExpress.XtraEditors.SpinEdit spAmount;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.TextEdit txtOperator;
         private DevExpress.XtraEditors.DateEdit dpExpenseDate;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private System.Windows.Forms.BindingSource bsCategory;
+        private DevExpress.XtraEditors.TreeListLookUpEdit tluCategory;
+        private DevExpress.XtraTreeList.TreeList treeListLookUpEdit1TreeList;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colNumber;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colSort;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colStatus;
+        private DevExpress.XtraEditors.SpinEdit spAmount;
+        private DevExpress.XtraEditors.TextEdit txtSummary;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private System.Windows.Forms.BindingSource bsCategory;
     }
 }

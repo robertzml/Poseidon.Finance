@@ -57,6 +57,21 @@ namespace Poseidon.Finance.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmExpenseAdd));
             LoadData();
         }
+        
+        /// <summary>
+        /// 编辑用款
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var expense = this.expenseGrid.GetCurrentSelect();
+            if (expense == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmExpenseEdit), new object[] { expense.Id });
+            LoadData();
+        }
         #endregion //Event
     }
 }

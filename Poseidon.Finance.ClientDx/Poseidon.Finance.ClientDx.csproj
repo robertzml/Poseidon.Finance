@@ -78,6 +78,12 @@
     <Compile Include="Expense\FrmExpenseManage.Designer.cs">
       <DependentUpon>FrmExpenseManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Expense\FrmExpenseEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseEdit.Designer.cs">
+      <DependentUpon>FrmExpenseEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grid\CategoryTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseAdd.resx">
       <DependentUpon>FrmExpenseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expense\FrmExpenseEdit.resx">
+      <DependentUpon>FrmExpenseEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseManage.resx">
       <DependentUpon>FrmExpenseManage.cs</DependentUpon>
