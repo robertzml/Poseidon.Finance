@@ -67,14 +67,9 @@ namespace Poseidon.Finance.Utility
         /// <summary>
         /// 设置实体
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="entity">实体对象</param>
         private void SetEntity(Expense entity)
         {
-            //var fund = this.luFund.GetSelectedDataRow() as Fund;
-            //entity.FundId = fund.Id;
-            //entity.FundName = fund.Name;
-            //entity.FundNumber = fund.Number;
-
             entity.Summary = this.txtSummary.Text;
             entity.Amount = this.spAmount.Value;
 
@@ -103,8 +98,7 @@ namespace Poseidon.Finance.Utility
             this.collectionName = collectionName;
             this.documentId = documentId;
             this.currentUser = currentUser;
-
-            this.bsFund.DataSource = BusinessFactory<FundBusiness>.Instance.FindAll();
+         
             this.bsCategory.DataSource = BusinessFactory<CategoryBusiness>.Instance.FindAll();
         }
 

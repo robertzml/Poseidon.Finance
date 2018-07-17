@@ -29,7 +29,6 @@ namespace Poseidon.Finance.Utility
         /// <param name="documentId">文档ID</param>
         public virtual void Init(string documentId)
         {
-
         }
         #endregion //Method
     }

@@ -14,6 +14,9 @@ namespace Poseidon.Finance.Utility
     using Poseidon.Finance.Core.DL;
     using Poseidon.Common;
 
+    /// <summary>
+    /// 用款查看窗体
+    /// </summary>
     public partial class FrmExpenseView : BaseSingleForm
     {
         #region Field
@@ -66,6 +69,7 @@ namespace Poseidon.Finance.Utility
         {
             ExpenseAddModule mod = new ExpenseAddModule();
 
+            this.gcContext.Text = "用款信息";
             this.gcContext.Controls.Clear();
             this.gcContext.Controls.Add(mod);
             mod.Dock = DockStyle.Fill;
@@ -81,6 +85,7 @@ namespace Poseidon.Finance.Utility
             var control = Reflect<BaseExpenseControl>.Create(this.currentExpense.ModuleName, this.currentExpense.AssemblyName, false);
             control.Init(this.currentExpense.DocumentId);
 
+            this.gcContext.Text = "业务信息";
             this.gcContext.Controls.Clear();
             this.gcContext.Controls.Add(control);
             control.Dock = DockStyle.Fill;
