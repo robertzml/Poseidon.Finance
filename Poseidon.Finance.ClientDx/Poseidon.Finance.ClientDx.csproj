@@ -84,6 +84,18 @@
     <Compile Include="Expense\FrmExpenseEdit.Designer.cs">
       <DependentUpon>FrmExpenseEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment\FrmPaymentAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\FrmPaymentAdd.Designer.cs">
+      <DependentUpon>FrmPaymentAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\FrmPaymentManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\FrmPaymentManage.Designer.cs">
+      <DependentUpon>FrmPaymentManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grid\CategoryTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\FundGrid.resx">
       <DependentUpon>FundGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\FrmPaymentAdd.resx">
+      <DependentUpon>FrmPaymentAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\FrmPaymentManage.resx">
+      <DependentUpon>FrmPaymentManage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -69,6 +69,7 @@
     <Compile Include="BL\CategoryBusiness.cs" />
     <Compile Include="BL\ExpenseBusiness.cs" />
     <Compile Include="BL\FundBusiness.cs" />
+    <Compile Include="BL\PaymentBusiness.cs" />
     <Compile Include="DAL\Mongo\CategoryRepository.cs" />
     <Compile Include="DAL\Mongo\ExpenseRepository.cs" />
     <Compile Include="DAL\Mongo\FundRepository.cs" />

@@ -76,6 +76,12 @@ namespace Poseidon.Finance.Core.DL
         public DateTime PaidDate { get; set; }
 
         /// <summary>
+        /// 是否入账
+        /// </summary>
+        [Display(Name = "是否入账")]
+        public bool IsPost { get; set; }
+
+        /// <summary>
         /// 用款记录
         /// </summary>
         [Display(Name = "用款记录")]

@@ -48,6 +48,7 @@ namespace Poseidon.Finance.Core.DAL.Mongo
             entity.Remission = doc["remission"].ToDecimal();
             entity.PaidFee = doc["paidFee"].ToDecimal();
             entity.PaidDate = doc["paidDate"].ToLocalTime();
+            entity.IsPost = doc["isPost"].ToBoolean();
 
             entity.ExpenseIds = new List<string>();
             if (doc.Contains("expenseIds"))
@@ -100,6 +101,7 @@ namespace Poseidon.Finance.Core.DAL.Mongo
                 { "remission", entity.Remission },
                 { "paidFee", entity.PaidFee },
                 { "paidDate", entity.PaidDate },
+                { "isPost", entity.IsPost },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },

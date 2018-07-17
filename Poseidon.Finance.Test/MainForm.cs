@@ -39,5 +39,10 @@ namespace Poseidon.Finance.Test
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmExpenseManage));
         }
+
+        private void menuPaymentMan_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmPaymentManage));
+        }
     }
 }

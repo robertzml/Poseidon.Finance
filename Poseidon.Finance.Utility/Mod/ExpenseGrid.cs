@@ -20,6 +20,13 @@ namespace Poseidon.Finance.Utility
     /// </summary>
     public partial class ExpenseGrid : WinEntityGrid<Expense>
     {
+        #region Field
+        /// <summary>
+        /// 是否显示程序集信息
+        /// </summary>
+        private bool showAssembly = false;
+        #endregion //Field
+
         #region Constructor
         public ExpenseGrid()
         {
@@ -36,6 +43,11 @@ namespace Poseidon.Finance.Utility
         private void ExpenseGrid_Load(object sender, EventArgs e)
         {
             this.AppendMenu(this.contextMenuStrip1);
+
+            this.colAssemblyName.Visible = this.showAssembly;
+            this.colModuleName.Visible = this.showAssembly;
+            this.colCollectionName.Visible = this.showAssembly;
+            this.colDocumentId.Visible = this.showAssembly;
         }
 
         /// <summary>
@@ -51,5 +63,23 @@ namespace Poseidon.Finance.Utility
         }
         #endregion //Event
 
+        #region Property
+        /// <summary>
+        /// 是否显示程序集信息
+        /// </summary>
+        [Description("是否显示程序集信息"), Category("界面")]
+        public bool ShowAssembly
+        {
+            get
+            {
+                return showAssembly;
+            }
+
+            set
+            {
+                showAssembly = value;
+            }
+        }
+        #endregion //Property
     }
 }
