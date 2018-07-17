@@ -89,6 +89,12 @@
     <Compile Include="Mod\ExpenseGrid.Designer.cs">
       <DependentUpon>ExpenseGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\PaymentGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\PaymentGrid.Designer.cs">
+      <DependentUpon>PaymentGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +115,9 @@
     <EmbeddedResource Include="Mod\ExpenseGrid.resx">
       <DependentUpon>ExpenseGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mod\PaymentGrid.resx">
+      <DependentUpon>PaymentGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -116,6 +125,7 @@
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Category.datasource" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Expense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Fund.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Payment.datasource" />
     <None Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>

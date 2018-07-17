@@ -34,6 +34,13 @@ namespace Poseidon.Finance.Core.BL
         /// <param name="user">操作用户</param>
         public void Create(Payment entity, LoginUser user)
         {
+            ExpenseBusiness expenseBusiness = new ExpenseBusiness();
+
+            foreach(var item in entity.ExpenseIds)
+            {
+                expenseBusiness.PayExpense(item);
+            }
+
             entity.CreateBy = new UpdateStamp
             {
                 UserId = user.Id,

@@ -20,6 +20,13 @@ namespace Poseidon.Finance.ClientDx
     /// </summary>
     public partial class FrmPaymentManage : BaseMdiForm
     {
+        #region Field
+        /// <summary>
+        /// 付款数据
+        /// </summary>
+        private List<Payment> paymentList;
+        #endregion //Field
+
         #region Constructor
         public FrmPaymentManage()
         {
@@ -27,7 +34,51 @@ namespace Poseidon.Finance.ClientDx
         }
         #endregion //Constructor
 
+        #region Function
+        protected override void InitForm()
+        {
+            this.LoadPayment();
+
+            base.InitForm();
+        }
+
+        /// <summary>
+        /// 载入付款记录
+        /// </summary>
+        private void LoadPayment()
+        {
+            this.paymentList = BusinessFactory<PaymentBusiness>.Instance.FindAll().ToList();
+            this.paymentGrid.DataSource = this.paymentList;
+        }
+
+        /// <summary>
+        /// 查询数据
+        /// </summary>
+        private void SearchData()
+        {
+            var temp = this.paymentList;
+
+            if (this.dpStart.EditValue != null)
+                temp = temp.Where(r => r.PaidDate >= this.dpStart.DateTime).ToList();
+
+            if (this.dpEnd.EditValue != null)
+                temp = temp.Where(r => r.PaidDate <= this.dpEnd.DateTime).ToList();
+
+            this.paymentGrid.DataSource = temp;
+        }
+        #endregion //Function
+
         #region Event
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchData();
+        }
+
         /// <summary>
         /// 新增付款
         /// </summary>
@@ -36,6 +87,7 @@ namespace Poseidon.Finance.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmPaymentAdd));
+            this.LoadPayment();
         }
         #endregion //Event
     }
