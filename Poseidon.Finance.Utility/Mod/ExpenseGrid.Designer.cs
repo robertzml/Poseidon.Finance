@@ -82,6 +82,8 @@
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
             this.dgvEntity.OptionsDetail.EnableMasterViewMode = false;
+            this.dgvEntity.OptionsSelection.MultiSelect = true;
+            this.dgvEntity.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
@@ -106,7 +108,7 @@
             this.colSerialNumber.FieldName = "SerialNumber";
             this.colSerialNumber.Name = "colSerialNumber";
             this.colSerialNumber.Visible = true;
-            this.colSerialNumber.VisibleIndex = 0;
+            this.colSerialNumber.VisibleIndex = 1;
             // 
             // colSummary
             // 
@@ -114,7 +116,7 @@
             this.colSummary.FieldName = "Summary";
             this.colSummary.Name = "colSummary";
             this.colSummary.Visible = true;
-            this.colSummary.VisibleIndex = 1;
+            this.colSummary.VisibleIndex = 2;
             // 
             // colAmount
             // 
@@ -122,7 +124,7 @@
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 2;
+            this.colAmount.VisibleIndex = 3;
             // 
             // colCategoryNumber
             // 
@@ -130,7 +132,7 @@
             this.colCategoryNumber.FieldName = "CategoryNumber";
             this.colCategoryNumber.Name = "colCategoryNumber";
             this.colCategoryNumber.Visible = true;
-            this.colCategoryNumber.VisibleIndex = 3;
+            this.colCategoryNumber.VisibleIndex = 4;
             // 
             // colCategoryName
             // 
@@ -138,7 +140,7 @@
             this.colCategoryName.FieldName = "CategoryName";
             this.colCategoryName.Name = "colCategoryName";
             this.colCategoryName.Visible = true;
-            this.colCategoryName.VisibleIndex = 4;
+            this.colCategoryName.VisibleIndex = 5;
             // 
             // colOperator
             // 
@@ -146,7 +148,7 @@
             this.colOperator.FieldName = "Operator";
             this.colOperator.Name = "colOperator";
             this.colOperator.Visible = true;
-            this.colOperator.VisibleIndex = 5;
+            this.colOperator.VisibleIndex = 6;
             // 
             // colExpenseDate
             // 
@@ -154,7 +156,7 @@
             this.colExpenseDate.FieldName = "ExpenseDate";
             this.colExpenseDate.Name = "colExpenseDate";
             this.colExpenseDate.Visible = true;
-            this.colExpenseDate.VisibleIndex = 6;
+            this.colExpenseDate.VisibleIndex = 7;
             // 
             // colIsPaid
             // 
@@ -162,7 +164,7 @@
             this.colIsPaid.FieldName = "IsPaid";
             this.colIsPaid.Name = "colIsPaid";
             this.colIsPaid.Visible = true;
-            this.colIsPaid.VisibleIndex = 7;
+            this.colIsPaid.VisibleIndex = 8;
             // 
             // colModuleName
             // 
@@ -170,7 +172,7 @@
             this.colModuleName.FieldName = "ModuleName";
             this.colModuleName.Name = "colModuleName";
             this.colModuleName.Visible = true;
-            this.colModuleName.VisibleIndex = 8;
+            this.colModuleName.VisibleIndex = 9;
             // 
             // colAssemblyName
             // 
@@ -178,7 +180,7 @@
             this.colAssemblyName.FieldName = "AssemblyName";
             this.colAssemblyName.Name = "colAssemblyName";
             this.colAssemblyName.Visible = true;
-            this.colAssemblyName.VisibleIndex = 9;
+            this.colAssemblyName.VisibleIndex = 10;
             // 
             // colCollectionName
             // 
@@ -186,7 +188,7 @@
             this.colCollectionName.FieldName = "CollectionName";
             this.colCollectionName.Name = "colCollectionName";
             this.colCollectionName.Visible = true;
-            this.colCollectionName.VisibleIndex = 10;
+            this.colCollectionName.VisibleIndex = 11;
             // 
             // colDocumentId
             // 
@@ -194,7 +196,7 @@
             this.colDocumentId.FieldName = "DocumentId";
             this.colDocumentId.Name = "colDocumentId";
             this.colDocumentId.Visible = true;
-            this.colDocumentId.VisibleIndex = 11;
+            this.colDocumentId.VisibleIndex = 12;
             // 
             // colRemark
             // 
@@ -202,7 +204,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 12;
+            this.colRemark.VisibleIndex = 13;
             // 
             // colStatus
             // 

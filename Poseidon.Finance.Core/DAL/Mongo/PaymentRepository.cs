@@ -130,5 +130,18 @@ namespace Poseidon.Finance.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 添加付款信息
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override Payment Create(Payment entity)
+        {
+            entity.SerialNumber = this.GenerateSerialNumber(DateTime.Now);
+            return base.Create(entity);
+        }
+        #endregion //Method
     }
 }

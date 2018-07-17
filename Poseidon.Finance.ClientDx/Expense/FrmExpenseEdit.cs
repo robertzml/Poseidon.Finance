@@ -134,7 +134,7 @@ namespace Poseidon.Finance.ClientDx
             }
             catch (PoseidonException pe)
             {
-                Logger.Instance.Exception("更新付款失败", pe);
+                Logger.Instance.Exception("更新用款失败", pe);
                 MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
             }
         }

@@ -87,6 +87,11 @@ namespace Poseidon.Finance.ClientDx
         #endregion //Function
 
         #region Event
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             var input = CheckInput();
@@ -108,7 +113,7 @@ namespace Poseidon.Finance.ClientDx
             }
             catch (PoseidonException pe)
             {
-                Logger.Instance.Exception("新增付款记录失败", pe);
+                Logger.Instance.Exception("新增用款记录失败", pe);
                 MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
             }
         }

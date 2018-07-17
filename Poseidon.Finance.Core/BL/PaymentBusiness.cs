@@ -51,6 +51,23 @@ namespace Poseidon.Finance.Core.BL
             entity.Status = 0;
             base.Create(entity);
         }
+
+        /// <summary>
+        /// 编辑付款信息
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <param name="user">操作用户</param>
+        /// <returns></returns>
+        public bool Update(Payment entity, LoginUser user)
+        {
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+            return base.Update(entity);
+        }
         #endregion //Method
     }
 }

@@ -28,6 +28,15 @@ namespace Poseidon.Finance.Core.BL
 
         #region Method
         /// <summary>
+        /// 获取所有未付款
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Expense> FindUnPaid()
+        {
+            return this.baseDal.FindListByField("isPaid", false);
+        }
+
+        /// <summary>
         /// 添加用款信息
         /// </summary>
         /// <param name="entity">实体对象</param>
