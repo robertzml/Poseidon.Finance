@@ -11,13 +11,14 @@ using System.Windows.Forms;
 namespace Poseidon.Finance.Utility
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
     using Poseidon.Winform.Base;
     using Poseidon.Finance.Core.BL;
     using Poseidon.Finance.Core.DL;
     using Poseidon.Common;
 
     /// <summary>
-    /// 新增用款窗体
+    /// 新增费用窗体
     /// </summary>
     public partial class FrmExpenseAdd : BaseSingleForm
     {
@@ -87,7 +88,7 @@ namespace Poseidon.Finance.Utility
             }
             if (this.dpExpenseDate.EditValue == null)
             {
-                errorMessage = "请选择用款日期";
+                errorMessage = "请选择费用日期";
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
@@ -125,7 +126,28 @@ namespace Poseidon.Finance.Utility
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            var input = CheckInput();
+            if (!input.Item1)
+            {
+                MessageUtil.ShowError(input.Item2);
+                return;
+            }
 
+            try
+            {
+                Expense entity = new Expense();
+                SetEntity(entity);
+
+                BusinessFactory<ExpenseBusiness>.Instance.Create(entity, this.currentUser);
+
+                MessageUtil.ShowInfo("保存成功");
+                this.Close();
+            }
+            catch (PoseidonException pe)
+            {
+                Logger.Instance.Exception("新增费用记录失败", pe);
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
         }
         #endregion //Event
     }

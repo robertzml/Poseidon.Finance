@@ -10,7 +10,7 @@ namespace Poseidon.Finance.Core.IDAL
     using Poseidon.Finance.Core.DL;
 
     /// <summary>
-    /// 用款数据访问接口
+    /// 费用数据访问接口
     /// </summary>
     internal interface IExpenseRepository : IBaseDAL<Expense>
     {

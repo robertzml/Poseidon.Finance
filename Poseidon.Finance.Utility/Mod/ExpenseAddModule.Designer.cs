@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.tluCategory = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsCategory = new System.Windows.Forms.BindingSource();
+            this.bsCategory = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colNumber = new DevExpress.XtraTreeList.Columns.TreeListColumn();

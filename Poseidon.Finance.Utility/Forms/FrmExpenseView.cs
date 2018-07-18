@@ -15,13 +15,13 @@ namespace Poseidon.Finance.Utility
     using Poseidon.Common;
 
     /// <summary>
-    /// 用款查看窗体
+    /// 费用查看窗体
     /// </summary>
     public partial class FrmExpenseView : BaseSingleForm
     {
         #region Field
         /// <summary>
-        /// 当前关联用款对象
+        /// 当前关联费用对象
         /// </summary>
         private Expense currentExpense;
         #endregion //Field
@@ -61,7 +61,7 @@ namespace Poseidon.Finance.Utility
 
         #region Event
         /// <summary>
-        /// 选择用款界面
+        /// 选择费用界面
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -69,7 +69,7 @@ namespace Poseidon.Finance.Utility
         {
             ExpenseAddModule mod = new ExpenseAddModule();
 
-            this.gcContext.Text = "用款信息";
+            this.gcContext.Text = "费用信息";
             this.gcContext.Controls.Clear();
             this.gcContext.Controls.Add(mod);
             mod.Dock = DockStyle.Fill;

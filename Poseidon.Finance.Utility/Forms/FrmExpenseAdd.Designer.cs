@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtOperator = new DevExpress.XtraEditors.TextEdit();
             this.dpExpenseDate = new DevExpress.XtraEditors.DateEdit();
             this.tluCategory = new DevExpress.XtraEditors.TreeListLookUpEdit();
+            this.bsCategory = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colNumber = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -49,7 +51,6 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsCategory = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -63,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluCategory.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).BeginInit();
@@ -73,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -107,7 +108,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(454, 242);
             this.groupControl1.TabIndex = 1;
-            this.groupControl1.Text = "用款信息";
+            this.groupControl1.Text = "费用信息";
             // 
             // layoutControl1
             // 
@@ -169,6 +170,10 @@
             this.tluCategory.Size = new System.Drawing.Size(160, 20);
             this.tluCategory.StyleController = this.layoutControl1;
             this.tluCategory.TabIndex = 6;
+            // 
+            // bsCategory
+            // 
+            this.bsCategory.DataSource = typeof(Poseidon.Finance.Core.DL.Category);
             // 
             // treeListLookUpEdit1TreeList
             // 
@@ -300,7 +305,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(215, 24);
-            this.layoutControlItem4.Text = "用款日期";
+            this.layoutControlItem4.Text = "费用日期";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem5
@@ -321,17 +326,13 @@
             this.layoutControlItem6.Text = "备注";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // bsCategory
-            // 
-            this.bsCategory.DataSource = typeof(Poseidon.Finance.Core.DL.Category);
-            // 
             // FrmExpenseAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 302);
             this.Name = "FrmExpenseAdd";
-            this.Text = "新增用款";
+            this.Text = "新增费用";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -345,6 +346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpExpenseDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluCategory.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).EndInit();
@@ -355,7 +357,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCategory)).EndInit();
             this.ResumeLayout(false);
 
         }

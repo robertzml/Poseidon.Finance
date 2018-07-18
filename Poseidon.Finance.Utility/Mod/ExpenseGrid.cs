@@ -16,7 +16,7 @@ namespace Poseidon.Finance.Utility
     using Poseidon.Finance.Core.DL;
 
     /// <summary>
-    /// 用款表格控件
+    /// 费用表格控件
     /// </summary>
     public partial class ExpenseGrid : WinEntityGrid<Expense>
     {

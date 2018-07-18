@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtOperator = new DevExpress.XtraEditors.TextEdit();
             this.dpExpenseDate = new DevExpress.XtraEditors.DateEdit();
             this.tluCategory = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsCategory = new System.Windows.Forms.BindingSource(this.components);
+            this.bsCategory = new System.Windows.Forms.BindingSource();
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colNumber = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -108,7 +107,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(454, 242);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "用款信息";
+            this.groupControl1.Text = "费用信息";
             // 
             // layoutControl1
             // 
@@ -305,7 +304,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(215, 24);
-            this.layoutControlItem4.Text = "用款日期";
+            this.layoutControlItem4.Text = "费用日期";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem5
@@ -334,7 +333,7 @@
             this.MaximumSize = new System.Drawing.Size(470, 340);
             this.MinimumSize = new System.Drawing.Size(470, 340);
             this.Name = "FrmExpenseAdd";
-            this.Text = "新增用款";
+            this.Text = "新增费用";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();

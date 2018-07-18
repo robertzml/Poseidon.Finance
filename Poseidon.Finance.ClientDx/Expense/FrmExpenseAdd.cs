@@ -18,7 +18,7 @@ namespace Poseidon.Finance.ClientDx
     using Poseidon.Finance.Core.DL;
 
     /// <summary>
-    /// 添加用款窗体
+    /// 添加费用窗体
     /// </summary>
     public partial class FrmExpenseAdd : BaseSingleForm
     {
@@ -56,7 +56,7 @@ namespace Poseidon.Finance.ClientDx
             }
             if (this.dpExpenseDate.EditValue == null)
             {
-                errorMessage = "请选择用款日期";
+                errorMessage = "请选择费用日期";
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
@@ -113,7 +113,7 @@ namespace Poseidon.Finance.ClientDx
             }
             catch (PoseidonException pe)
             {
-                Logger.Instance.Exception("新增用款记录失败", pe);
+                Logger.Instance.Exception("新增费用记录失败", pe);
                 MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
             }
         }

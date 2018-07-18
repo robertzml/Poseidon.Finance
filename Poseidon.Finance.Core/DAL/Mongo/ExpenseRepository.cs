@@ -14,13 +14,13 @@ namespace Poseidon.Finance.Core.DAL.Mongo
     using Poseidon.Finance.Core.IDAL;
 
     /// <summary>
-    /// 用款数据访问类
+    /// 费用数据访问类
     /// </summary>
     internal class ExpenseRepository : AbstractDALMongo<Expense>, IExpenseRepository
     {
         #region Constructor
         /// <summary>
-        /// 用款数据访问类
+        /// 费用数据访问类
         /// </summary>
         public ExpenseRepository()
         {
@@ -114,7 +114,7 @@ namespace Poseidon.Finance.Core.DAL.Mongo
 
         #region Method
         /// <summary>
-        /// 添加用款信息
+        /// 添加费用信息
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>

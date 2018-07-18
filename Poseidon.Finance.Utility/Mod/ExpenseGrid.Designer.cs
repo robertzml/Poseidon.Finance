@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.components = new System.ComponentModel.Container();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuView = new System.Windows.Forms.ToolStripMenuItem();
             this.colSerialNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSummary = new DevExpress.XtraGrid.Columns.GridColumn();

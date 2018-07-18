@@ -97,7 +97,7 @@
             // 
             // navExpenseItem
             // 
-            this.navExpenseItem.Caption = "用款信息";
+            this.navExpenseItem.Caption = "费用信息";
             this.navExpenseItem.LargeImage = ((System.Drawing.Image)(resources.GetObject("navExpenseItem.LargeImage")));
             this.navExpenseItem.Name = "navExpenseItem";
             this.navExpenseItem.SmallImage = ((System.Drawing.Image)(resources.GetObject("navExpenseItem.SmallImage")));
@@ -140,7 +140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 478);
             this.Name = "FrmExpenseView";
-            this.Text = "用款信息查询";
+            this.Text = "费用信息查询";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();

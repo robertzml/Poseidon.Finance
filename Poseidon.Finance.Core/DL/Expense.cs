@@ -10,7 +10,7 @@ namespace Poseidon.Finance.Core.DL
     using Poseidon.Base.Framework;
 
     /// <summary>
-    /// 用款类
+    /// 费用类
     /// </summary>
     public class Expense : BusinessEntity
     {
@@ -52,9 +52,9 @@ namespace Poseidon.Finance.Core.DL
         public string Operator { get; set; }
 
         /// <summary>
-        /// 用款日期
+        /// 费用日期
         /// </summary>
-        [Display(Name = "用款日期")]
+        [Display(Name = "费用日期")]
         public DateTime ExpenseDate { get; set; }    
 
         /// <summary>
