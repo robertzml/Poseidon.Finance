@@ -93,6 +93,8 @@ namespace Poseidon.Finance.Utility
         private void menuView_Click(object sender, EventArgs e)
         {
             var expense = this.GetCurrentSelect();
+            if (expense == null)
+                return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmExpenseView), new object[] { expense });
         }

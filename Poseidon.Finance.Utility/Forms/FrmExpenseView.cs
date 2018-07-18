@@ -43,18 +43,7 @@ namespace Poseidon.Finance.Utility
 
         protected override void InitForm()
         {
-            //if (!string.IsNullOrEmpty(this.currentExpense.DocumentId))
-            //{
-            //    var navItem = new DevExpress.XtraNavBar.NavBarItem
-            //    {
-            //        Name = "",
-            //        Caption = "业务信息",
-            //    };
-            //    navItem.LinkClicked += NavBizItem_LinkClicked;
-
-            //    this.nbgExpense.ItemLinks.Add(new DevExpress.XtraNavBar.NavBarItemLink(navItem));
-            //}
-
+            navExpenseItem_LinkClicked(null, null);
             base.InitForm();
         }
         #endregion //Function
@@ -67,12 +56,13 @@ namespace Poseidon.Finance.Utility
         /// <param name="e"></param>
         private void navExpenseItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            ExpenseAddModule mod = new ExpenseAddModule();
+            ExpenseInfoModule mod = new ExpenseInfoModule();
 
             this.gcContext.Text = "费用信息";
             this.gcContext.Controls.Clear();
             this.gcContext.Controls.Add(mod);
             mod.Dock = DockStyle.Fill;
+            mod.Init(this.currentExpense);
         }
 
         /// <summary>
@@ -80,7 +70,7 @@ namespace Poseidon.Finance.Utility
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void navBizItem_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void navBizItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             var control = Reflect<BaseExpenseControl>.Create(this.currentExpense.ModuleName, this.currentExpense.AssemblyName, false);
             control.Init(this.currentExpense.DocumentId);

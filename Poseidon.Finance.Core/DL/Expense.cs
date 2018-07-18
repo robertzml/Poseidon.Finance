@@ -55,7 +55,13 @@ namespace Poseidon.Finance.Core.DL
         /// 费用日期
         /// </summary>
         [Display(Name = "费用日期")]
-        public DateTime ExpenseDate { get; set; }    
+        public DateTime ExpenseDate { get; set; }
+
+        /// <summary>
+        /// 已支付金额
+        /// </summary>
+        [Display(Name = "已支付金额")]
+        public decimal PaidFee { get; set; }
 
         /// <summary>
         /// 是否支付

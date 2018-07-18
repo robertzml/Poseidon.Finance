@@ -45,6 +45,19 @@ namespace Poseidon.Finance.Utility
         #endregion //Field
 
         #region Constructor
+        public FrmExpenseAdd()
+        {
+            InitializeComponent();
+            InitData("", "", "", "");
+        }
+
+        /// <summary>
+        /// 新增费用
+        /// </summary>
+        /// <param name="moduleName">模块名称</param>
+        /// <param name="assemblyName">程序集名称</param>
+        /// <param name="collectionName">集合名称</param>
+        /// <param name="documentId">文档ID</param>
         public FrmExpenseAdd(string moduleName, string assemblyName, string collectionName, string documentId)
         {
             InitializeComponent();

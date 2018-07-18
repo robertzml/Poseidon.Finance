@@ -47,25 +47,25 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(602, 18);
+            this.btnCancel.Location = new System.Drawing.Point(692, 15);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(493, 18);
+            this.btnConfirm.Location = new System.Drawing.Point(583, 15);
             // 
             // plFill
             // 
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.splitContainerControl1);
-            this.plFill.Size = new System.Drawing.Size(708, 418);
+            this.plFill.Size = new System.Drawing.Size(784, 402);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 418);
-            this.plBottom.Size = new System.Drawing.Size(708, 60);
+            this.plBottom.Location = new System.Drawing.Point(0, 402);
+            this.plBottom.Size = new System.Drawing.Size(784, 60);
             // 
             // navBarControl1
             // 
@@ -80,7 +80,7 @@
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 158;
             this.navBarControl1.ShowIcons = DevExpress.Utils.DefaultBoolean.True;
-            this.navBarControl1.Size = new System.Drawing.Size(158, 418);
+            this.navBarControl1.Size = new System.Drawing.Size(158, 402);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             this.navBarControl1.View = new DevExpress.XtraNavBar.ViewInfo.SkinExplorerBarViewInfoRegistrator();
@@ -89,6 +89,7 @@
             // 
             this.nbgExpense.Caption = "关联信息";
             this.nbgExpense.Expanded = true;
+            this.nbgExpense.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.nbgExpense.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navExpenseItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBizItem)});
@@ -109,7 +110,7 @@
             this.navBizItem.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBizItem.LargeImage")));
             this.navBizItem.Name = "navBizItem";
             this.navBizItem.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBizItem.SmallImage")));
-            this.navBizItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBizItem_LinkClicked_1);
+            this.navBizItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBizItem_LinkClicked);
             // 
             // splitContainerControl1
             // 
@@ -120,7 +121,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gcContext);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(708, 418);
+            this.splitContainerControl1.Size = new System.Drawing.Size(784, 402);
             this.splitContainerControl1.SplitterPosition = 158;
             this.splitContainerControl1.TabIndex = 1;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -130,7 +131,7 @@
             this.gcContext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcContext.Location = new System.Drawing.Point(0, 0);
             this.gcContext.Name = "gcContext";
-            this.gcContext.Size = new System.Drawing.Size(545, 418);
+            this.gcContext.Size = new System.Drawing.Size(621, 402);
             this.gcContext.TabIndex = 0;
             this.gcContext.Text = "groupControl1";
             // 
@@ -138,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 478);
+            this.ClientSize = new System.Drawing.Size(784, 462);
             this.Name = "FrmExpenseView";
             this.Text = "费用信息查询";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();

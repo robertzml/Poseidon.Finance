@@ -80,6 +80,7 @@ namespace Poseidon.Finance.Core.BL
                 Time = DateTime.Now
             };
 
+            entity.PaidFee = 0;
             entity.IsPaid = false;
             entity.Status = 0;
             base.Create(entity);

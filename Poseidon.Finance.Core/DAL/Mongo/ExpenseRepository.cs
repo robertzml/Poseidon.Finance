@@ -45,6 +45,7 @@ namespace Poseidon.Finance.Core.DAL.Mongo
             entity.CategoryName = doc["categoryName"].ToString();
             entity.Operator = doc["operator"].ToString();
             entity.ExpenseDate = doc["expenseDate"].ToLocalTime();
+            entity.PaidFee = doc["paidFee"].ToDecimal();
             entity.IsPaid = doc["isPaid"].ToBoolean();
             entity.ModuleName = doc["moduleName"].ToString();
             entity.AssemblyName = doc["assemblyName"].ToString();
@@ -89,6 +90,7 @@ namespace Poseidon.Finance.Core.DAL.Mongo
                 { "categoryName", entity.CategoryName },
                 { "operator", entity.Operator },
                 { "expenseDate", entity.ExpenseDate },
+                { "paidFee", entity.PaidFee },
                 { "isPaid", entity.IsPaid },
                 { "moduleName", entity.ModuleName },
                 { "assemblyName", entity.AssemblyName },

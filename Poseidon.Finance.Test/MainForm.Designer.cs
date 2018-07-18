@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.经费本管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuFundList = new System.Windows.Forms.ToolStripMenuItem();
             this.用款管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseOv = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseMan = new System.Windows.Forms.ToolStripMenuItem();
-            this.费用分类管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCategoryMan = new System.Windows.Forms.ToolStripMenuItem();
             this.付款管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPaymentMan = new System.Windows.Forms.ToolStripMenuItem();
+            this.经费本管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFundList = new System.Windows.Forms.ToolStripMenuItem();
+            this.费用分类管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCategoryMan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,44 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // 用款管理ToolStripMenuItem
+            // 
+            this.用款管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuExpenseOv,
+            this.menuExpenseMan});
+            this.用款管理ToolStripMenuItem.Name = "用款管理ToolStripMenuItem";
+            this.用款管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.用款管理ToolStripMenuItem.Text = "费用管理";
+            // 
+            // menuExpenseOv
+            // 
+            this.menuExpenseOv.Name = "menuExpenseOv";
+            this.menuExpenseOv.Size = new System.Drawing.Size(152, 22);
+            this.menuExpenseOv.Text = "费用总览";
+            this.menuExpenseOv.Click += new System.EventHandler(this.menuExpenseOv_Click);
+            // 
+            // menuExpenseMan
+            // 
+            this.menuExpenseMan.Name = "menuExpenseMan";
+            this.menuExpenseMan.Size = new System.Drawing.Size(152, 22);
+            this.menuExpenseMan.Text = "费用管理";
+            this.menuExpenseMan.Click += new System.EventHandler(this.menuExpenseMan_Click);
+            // 
+            // 付款管理ToolStripMenuItem
+            // 
+            this.付款管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuPaymentMan});
+            this.付款管理ToolStripMenuItem.Name = "付款管理ToolStripMenuItem";
+            this.付款管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.付款管理ToolStripMenuItem.Text = "付款管理";
+            // 
+            // menuPaymentMan
+            // 
+            this.menuPaymentMan.Name = "menuPaymentMan";
+            this.menuPaymentMan.Size = new System.Drawing.Size(124, 22);
+            this.menuPaymentMan.Text = "付款管理";
+            this.menuPaymentMan.Click += new System.EventHandler(this.menuPaymentMan_Click);
+            // 
             // 经费本管理ToolStripMenuItem
             // 
             this.经费本管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -69,29 +107,6 @@
             this.menuFundList.Text = "经费本列表";
             this.menuFundList.Click += new System.EventHandler(this.menuFundList_Click);
             // 
-            // 用款管理ToolStripMenuItem
-            // 
-            this.用款管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuExpenseOv,
-            this.menuExpenseMan});
-            this.用款管理ToolStripMenuItem.Name = "用款管理ToolStripMenuItem";
-            this.用款管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.用款管理ToolStripMenuItem.Text = "用款管理";
-            // 
-            // menuExpenseOv
-            // 
-            this.menuExpenseOv.Name = "menuExpenseOv";
-            this.menuExpenseOv.Size = new System.Drawing.Size(152, 22);
-            this.menuExpenseOv.Text = "用款总览";
-            this.menuExpenseOv.Click += new System.EventHandler(this.menuExpenseOv_Click);
-            // 
-            // menuExpenseMan
-            // 
-            this.menuExpenseMan.Name = "menuExpenseMan";
-            this.menuExpenseMan.Size = new System.Drawing.Size(152, 22);
-            this.menuExpenseMan.Text = "用款管理";
-            this.menuExpenseMan.Click += new System.EventHandler(this.menuExpenseMan_Click);
-            // 
             // 费用分类管理ToolStripMenuItem
             // 
             this.费用分类管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -106,21 +121,6 @@
             this.menuCategoryMan.Size = new System.Drawing.Size(148, 22);
             this.menuCategoryMan.Text = "费用分类管理";
             this.menuCategoryMan.Click += new System.EventHandler(this.menuCategoryMan_Click);
-            // 
-            // 付款管理ToolStripMenuItem
-            // 
-            this.付款管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuPaymentMan});
-            this.付款管理ToolStripMenuItem.Name = "付款管理ToolStripMenuItem";
-            this.付款管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.付款管理ToolStripMenuItem.Text = "付款管理";
-            // 
-            // menuPaymentMan
-            // 
-            this.menuPaymentMan.Name = "menuPaymentMan";
-            this.menuPaymentMan.Size = new System.Drawing.Size(152, 22);
-            this.menuPaymentMan.Text = "付款管理";
-            this.menuPaymentMan.Click += new System.EventHandler(this.menuPaymentMan_Click);
             // 
             // MainForm
             // 

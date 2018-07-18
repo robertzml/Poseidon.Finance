@@ -71,6 +71,12 @@
     <Compile Include="BaseExpenseControl.Designer.cs">
       <DependentUpon>BaseExpenseControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\ExpenseInfoModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ExpenseInfoModule.Designer.cs">
+      <DependentUpon>ExpenseInfoModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmExpenseView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,22 +89,16 @@
     <Compile Include="Forms\FrmExpenseAdd.Designer.cs">
       <DependentUpon>FrmExpenseAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mod\ExpenseAddModule.cs">
+    <Compile Include="Grid\ExpenseGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Mod\ExpenseAddModule.Designer.cs">
-      <DependentUpon>ExpenseAddModule.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mod\ExpenseGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mod\ExpenseGrid.Designer.cs">
+    <Compile Include="Grid\ExpenseGrid.Designer.cs">
       <DependentUpon>ExpenseGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mod\PaymentGrid.cs">
+    <Compile Include="Grid\PaymentGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Mod\PaymentGrid.Designer.cs">
+    <Compile Include="Grid\PaymentGrid.Designer.cs">
       <DependentUpon>PaymentGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,14 +118,14 @@
     <EmbeddedResource Include="Forms\FrmExpenseView.resx">
       <DependentUpon>FrmExpenseView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mod\ExpenseAddModule.resx">
-      <DependentUpon>ExpenseAddModule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mod\ExpenseGrid.resx">
+    <EmbeddedResource Include="Grid\ExpenseGrid.resx">
       <DependentUpon>ExpenseGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mod\PaymentGrid.resx">
+    <EmbeddedResource Include="Grid\PaymentGrid.resx">
       <DependentUpon>PaymentGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ExpenseInfoModule.resx">
+      <DependentUpon>ExpenseInfoModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

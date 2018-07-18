@@ -66,12 +66,6 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Expense\FrmExpenseAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseAdd.Designer.cs">
-      <DependentUpon>FrmExpenseAdd.cs</DependentUpon>
-    </Compile>
     <Compile Include="Expense\FrmExpenseManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,9 +163,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Category\FrmCategoryManage.resx">
       <DependentUpon>FrmCategoryManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseAdd.resx">
-      <DependentUpon>FrmExpenseAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseEdit.resx">
       <DependentUpon>FrmExpenseEdit.cs</DependentUpon>

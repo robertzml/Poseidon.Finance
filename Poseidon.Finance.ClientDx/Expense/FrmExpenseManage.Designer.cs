@@ -33,12 +33,12 @@
             this.expenseGrid = new Poseidon.Finance.Utility.ExpenseGrid();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -76,7 +76,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(871, 398);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "用款记录";
+            this.groupControl1.Text = "费用记录";
             // 
             // expenseGrid
             // 
@@ -87,10 +87,12 @@
             this.expenseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.expenseGrid.Editable = false;
             this.expenseGrid.EnableMasterView = false;
+            this.expenseGrid.EnableMultiCheckSelect = false;
             this.expenseGrid.EnableMultiSelect = false;
             this.expenseGrid.Location = new System.Drawing.Point(2, 21);
             this.expenseGrid.Name = "expenseGrid";
             this.expenseGrid.ShowAddMenu = false;
+            this.expenseGrid.ShowAssembly = false;
             this.expenseGrid.ShowFooter = true;
             this.expenseGrid.ShowLineNumber = true;
             this.expenseGrid.ShowMenu = false;
@@ -121,6 +123,15 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(595, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(260, 22);
+            this.btnDelete.StyleController = this.layoutControl1;
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "删除费用";
+            // 
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(299, 12);
@@ -128,7 +139,7 @@
             this.btnEdit.Size = new System.Drawing.Size(292, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 5;
-            this.btnEdit.Text = "编辑用款";
+            this.btnEdit.Text = "编辑费用";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
@@ -138,7 +149,7 @@
             this.btnAdd.Size = new System.Drawing.Size(283, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "添加用款";
+            this.btnAdd.Text = "添加费用";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // layoutControlGroup1
@@ -172,15 +183,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(595, 12);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(260, 22);
-            this.btnDelete.StyleController = this.layoutControl1;
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.Text = "删除用款";
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnDelete;
@@ -197,7 +199,7 @@
             this.ClientSize = new System.Drawing.Size(877, 524);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmExpenseManage";
-            this.Text = "用款管理";
+            this.Text = "费用管理";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);

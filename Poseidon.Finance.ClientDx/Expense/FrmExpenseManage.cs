@@ -14,9 +14,10 @@ namespace Poseidon.Finance.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Finance.Core.BL;
     using Poseidon.Finance.Core.DL;
+    using Poseidon.Finance.Utility;
 
     /// <summary>
-    /// 用款管理窗体
+    /// 费用管理窗体
     /// </summary>
     public partial class FrmExpenseManage : BaseMdiForm
     {
@@ -48,7 +49,7 @@ namespace Poseidon.Finance.ClientDx
 
         #region Event
         /// <summary>
-        /// 添加用款
+        /// 添加费用
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -57,9 +58,9 @@ namespace Poseidon.Finance.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmExpenseAdd));
             LoadData();
         }
-        
+
         /// <summary>
-        /// 编辑用款
+        /// 编辑费用
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

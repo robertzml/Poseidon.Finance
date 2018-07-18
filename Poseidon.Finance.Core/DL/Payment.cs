@@ -82,9 +82,9 @@ namespace Poseidon.Finance.Core.DL
         public bool IsPost { get; set; }
 
         /// <summary>
-        /// 用款记录
+        /// 费用记录
         /// </summary>
-        [Display(Name = "用款记录")]
+        [Display(Name = "费用记录")]
         public List<string> ExpenseIds { get; set; }
         #endregion //Property
     }
