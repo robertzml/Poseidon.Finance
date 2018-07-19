@@ -15,6 +15,7 @@ namespace Poseidon.Finance.Utility
     using Poseidon.Winform.Base;
     using Poseidon.Finance.Core.BL;
     using Poseidon.Finance.Core.DL;
+    using Poseidon.Finance.Core.Utility;
     using Poseidon.Common;
 
     /// <summary>
@@ -42,13 +43,18 @@ namespace Poseidon.Finance.Utility
         /// 文档ID
         /// </summary>
         private string documentId;
+
+        /// <summary>
+        /// 相关费用业务实例
+        /// </summary>
+        private IExpenseBusiness expenseBusiness;
         #endregion //Field
 
         #region Constructor
         public FrmExpenseAdd()
         {
             InitializeComponent();
-            InitData("", "", "", "");
+            InitData("", "", "", "", null);
         }
 
         /// <summary>
@@ -58,21 +64,24 @@ namespace Poseidon.Finance.Utility
         /// <param name="assemblyName">程序集名称</param>
         /// <param name="collectionName">集合名称</param>
         /// <param name="documentId">文档ID</param>
-        public FrmExpenseAdd(string moduleName, string assemblyName, string collectionName, string documentId)
+        /// <param name="expenseBusiness">相关费用业务实例</param>
+        public FrmExpenseAdd(string moduleName, string assemblyName, string collectionName, string documentId, IExpenseBusiness expenseBusiness)
         {
             InitializeComponent();
 
-            InitData(moduleName, assemblyName, collectionName, documentId);
+            InitData(moduleName, assemblyName, collectionName, documentId, expenseBusiness);
         }
         #endregion //Constructor
 
         #region Function
-        private void InitData(string moduleName, string assemblyName, string collectionName, string documentId)
+        private void InitData(string moduleName, string assemblyName, string collectionName, string documentId, IExpenseBusiness expenseBusiness)
         {
             this.moduleName = moduleName;
             this.assemblyName = assemblyName;
             this.collectionName = collectionName;
             this.documentId = documentId;
+
+            this.expenseBusiness = expenseBusiness;
         }
 
         protected override void InitForm()
@@ -152,6 +161,9 @@ namespace Poseidon.Finance.Utility
                 SetEntity(entity);
 
                 BusinessFactory<ExpenseBusiness>.Instance.Create(entity, this.currentUser);
+
+                if (expenseBusiness != null)
+                    expenseBusiness.AfterCreate(entity.Id, this.documentId);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();
