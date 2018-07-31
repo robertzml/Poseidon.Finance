@@ -52,6 +52,7 @@
             // btnConfirm
             // 
             this.btnConfirm.Location = new System.Drawing.Point(583, 15);
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // plFill
             // 
@@ -79,6 +80,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 158;
+            this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
             this.navBarControl1.ShowIcons = DevExpress.Utils.DefaultBoolean.True;
             this.navBarControl1.Size = new System.Drawing.Size(158, 402);
             this.navBarControl1.TabIndex = 0;
@@ -133,7 +135,7 @@
             this.gcContext.Name = "gcContext";
             this.gcContext.Size = new System.Drawing.Size(621, 402);
             this.gcContext.TabIndex = 0;
-            this.gcContext.Text = "groupControl1";
+            this.gcContext.Text = "信息";
             // 
             // FrmExpenseView
             // 

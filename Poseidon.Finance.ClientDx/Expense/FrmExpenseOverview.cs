@@ -15,7 +15,7 @@ namespace Poseidon.Finance.ClientDx
     using Poseidon.Finance.Core.BL;
 
     /// <summary>
-    /// 用款总览窗体
+    /// 费用总览窗体
     /// </summary>
     public partial class FrmExpenseOverview : BaseMdiForm
     {
@@ -34,11 +34,45 @@ namespace Poseidon.Finance.ClientDx
             base.InitForm();
         }
 
+        /// <summary>
+        /// 载入费用
+        /// </summary>
         private void LoadExpense()
         {
             var data = BusinessFactory<ExpenseBusiness>.Instance.FindAll();
+
+            if (dpStart.EditValue != null)
+            {
+                data = data.Where(r => r.ExpenseDate >= dpStart.DateTime);
+            }
+            if (dpEnd.EditValue != null)
+            {
+                data = data.Where(r => r.ExpenseDate <= dpEnd.DateTime);
+            }
+
             this.expenseGrid.DataSource = data.ToList();
         }
         #endregion //Function
+
+        #region Event
+        /// <summary>
+        /// 搜索
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (dpStart.EditValue != null && dpEnd.EditValue != null)
+            {
+                if (dpStart.DateTime > dpEnd.DateTime)
+                {
+                    MessageUtil.ShowWarning("开始日期不能晚于结束日期");
+                    return;
+                }
+            }
+
+            LoadExpense();
+        }
+        #endregion //Event
     }
 }

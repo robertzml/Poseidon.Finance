@@ -80,6 +80,16 @@ namespace Poseidon.Finance.Utility
             this.gcContext.Controls.Add(control);
             control.Dock = DockStyle.Fill;
         }
+
+        /// <summary>
+        /// 确定
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion //Event
     }
 }
