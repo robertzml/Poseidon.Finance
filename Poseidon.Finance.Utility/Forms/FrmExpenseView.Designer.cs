@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExpenseView));
-            this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.nbgExpense = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navExpenseItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBizItem = new DevExpress.XtraNavBar.NavBarItem();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
+            this.accGroup1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accExpenseItem = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accBizItem = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.gcContext = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
             this.plBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcContext)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,58 +68,12 @@
             this.plBottom.Location = new System.Drawing.Point(0, 402);
             this.plBottom.Size = new System.Drawing.Size(784, 60);
             // 
-            // navBarControl1
-            // 
-            this.navBarControl1.ActiveGroup = this.nbgExpense;
-            this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.nbgExpense});
-            this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
-            this.navExpenseItem,
-            this.navBizItem});
-            this.navBarControl1.Location = new System.Drawing.Point(0, 0);
-            this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 158;
-            this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl1.ShowIcons = DevExpress.Utils.DefaultBoolean.True;
-            this.navBarControl1.Size = new System.Drawing.Size(158, 402);
-            this.navBarControl1.TabIndex = 0;
-            this.navBarControl1.Text = "navBarControl1";
-            this.navBarControl1.View = new DevExpress.XtraNavBar.ViewInfo.SkinExplorerBarViewInfoRegistrator();
-            // 
-            // nbgExpense
-            // 
-            this.nbgExpense.Caption = "关联信息";
-            this.nbgExpense.Expanded = true;
-            this.nbgExpense.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
-            this.nbgExpense.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navExpenseItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBizItem)});
-            this.nbgExpense.Name = "nbgExpense";
-            this.nbgExpense.ShowIcons = DevExpress.Utils.DefaultBoolean.True;
-            // 
-            // navExpenseItem
-            // 
-            this.navExpenseItem.Caption = "费用信息";
-            this.navExpenseItem.LargeImage = ((System.Drawing.Image)(resources.GetObject("navExpenseItem.LargeImage")));
-            this.navExpenseItem.Name = "navExpenseItem";
-            this.navExpenseItem.SmallImage = ((System.Drawing.Image)(resources.GetObject("navExpenseItem.SmallImage")));
-            this.navExpenseItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navExpenseItem_LinkClicked);
-            // 
-            // navBizItem
-            // 
-            this.navBizItem.Caption = "业务信息";
-            this.navBizItem.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBizItem.LargeImage")));
-            this.navBizItem.Name = "navBizItem";
-            this.navBizItem.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBizItem.SmallImage")));
-            this.navBizItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBizItem_LinkClicked);
-            // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.navBarControl1);
+            this.splitContainerControl1.Panel1.Controls.Add(this.accordionControl1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gcContext);
             this.splitContainerControl1.Panel2.Text = "Panel2";
@@ -127,6 +81,46 @@
             this.splitContainerControl1.SplitterPosition = 158;
             this.splitContainerControl1.TabIndex = 1;
             this.splitContainerControl1.Text = "splitContainerControl1";
+            // 
+            // accordionControl1
+            // 
+            this.accordionControl1.AllowItemSelection = true;
+            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accGroup1});
+            this.accordionControl1.Location = new System.Drawing.Point(0, 0);
+            this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Auto;
+            this.accordionControl1.ShowGroupExpandButtons = false;
+            this.accordionControl1.Size = new System.Drawing.Size(158, 402);
+            this.accordionControl1.TabIndex = 1;
+            this.accordionControl1.Text = "accordionControl1";
+            this.accordionControl1.ElementClick += new DevExpress.XtraBars.Navigation.ElementClickEventHandler(this.accordionControl1_ElementClick);
+            // 
+            // accGroup1
+            // 
+            this.accGroup1.Appearance.Normal.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.accGroup1.Appearance.Normal.Options.UseForeColor = true;
+            this.accGroup1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accExpenseItem,
+            this.accBizItem});
+            this.accGroup1.Expanded = true;
+            this.accGroup1.Tag = "Head";
+            this.accGroup1.Text = "关联信息";
+            // 
+            // accExpenseItem
+            // 
+            this.accExpenseItem.Image = ((System.Drawing.Image)(resources.GetObject("accExpenseItem.Image")));
+            this.accExpenseItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accExpenseItem.Tag = "Expense";
+            this.accExpenseItem.Text = "费用信息";
+            // 
+            // accBizItem
+            // 
+            this.accBizItem.Image = ((System.Drawing.Image)(resources.GetObject("accBizItem.Image")));
+            this.accBizItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accBizItem.Tag = "Biz";
+            this.accBizItem.Text = "业务信息";
             // 
             // gcContext
             // 
@@ -148,9 +142,9 @@
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
             this.plBottom.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcContext)).EndInit();
             this.ResumeLayout(false);
 
@@ -159,10 +153,10 @@
         #endregion
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraNavBar.NavBarControl navBarControl1;
-        private DevExpress.XtraNavBar.NavBarGroup nbgExpense;
-        private DevExpress.XtraNavBar.NavBarItem navExpenseItem;
-        private DevExpress.XtraNavBar.NavBarItem navBizItem;
         private DevExpress.XtraEditors.GroupControl gcContext;
+        private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accGroup1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accExpenseItem;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accBizItem;
     }
 }

@@ -43,18 +43,14 @@ namespace Poseidon.Finance.Utility
 
         protected override void InitForm()
         {
-            navExpenseItem_LinkClicked(null, null);
+            ShowExpense();
             base.InitForm();
         }
-        #endregion //Function
 
-        #region Event
         /// <summary>
-        /// 选择费用界面
+        /// 选择费用页面
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void navExpenseItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void ShowExpense()
         {
             ExpenseInfoModule mod = new ExpenseInfoModule();
 
@@ -66,11 +62,9 @@ namespace Poseidon.Finance.Utility
         }
 
         /// <summary>
-        /// 选择业务界面
+        /// 选择业务页面
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void navBizItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void ShowBiz()
         {
             var control = Reflect<BaseExpenseControl>.Create(this.currentExpense.ModuleName, this.currentExpense.AssemblyName, false);
             control.Init(this.currentExpense.DocumentId);
@@ -79,6 +73,27 @@ namespace Poseidon.Finance.Utility
             this.gcContext.Controls.Clear();
             this.gcContext.Controls.Add(control);
             control.Dock = DockStyle.Fill;
+        }
+        #endregion //Function
+
+        #region Event
+        /// <summary>
+        /// 菜单选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void accordionControl1_ElementClick(object sender, DevExpress.XtraBars.Navigation.ElementClickEventArgs e)
+        {
+            var tag = e.Element.Tag.ToString();
+
+            if (tag == "Expense")
+            {
+                ShowExpense();
+            }
+            else if (tag == "Biz")
+            {
+                ShowBiz();
+            }
         }
 
         /// <summary>

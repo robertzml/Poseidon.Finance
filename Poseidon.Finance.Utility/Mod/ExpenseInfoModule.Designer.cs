@@ -46,21 +46,21 @@
             this.txtOperator = new DevExpress.XtraEditors.TextEdit();
             this.txtSummary = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -81,21 +81,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -321,15 +321,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(604, 303);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.txtSummary;
-            this.layoutControlItem1.Location = new System.Drawing.Point(292, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(292, 24);
-            this.layoutControlItem1.Text = "摘要";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(70, 14);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtRemark;
@@ -338,15 +329,6 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(584, 139);
             this.layoutControlItem6.Text = "备注";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(70, 14);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txtOperator;
-            this.layoutControlItem4.Location = new System.Drawing.Point(292, 72);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(292, 24);
-            this.layoutControlItem4.Text = "经办人";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(70, 14);
             // 
             // layoutControlItem3
             // 
@@ -366,24 +348,6 @@
             this.layoutControlItem7.Text = "创建人";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(70, 14);
             // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.txtCreateTime;
-            this.layoutControlItem8.Location = new System.Drawing.Point(292, 96);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(292, 24);
-            this.layoutControlItem8.Text = "创建时间";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(70, 14);
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.txtAmount;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(146, 24);
-            this.layoutControlItem9.Text = "金额(元)";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(70, 14);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtEditor;
@@ -392,15 +356,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(292, 24);
             this.layoutControlItem2.Text = "编辑人";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(70, 14);
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.txtEditTime;
-            this.layoutControlItem10.Location = new System.Drawing.Point(292, 120);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(292, 24);
-            this.layoutControlItem10.Text = "编辑时间";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(70, 14);
             // 
             // layoutControlItem5
             // 
@@ -411,15 +366,6 @@
             this.layoutControlItem5.Text = "费用日期";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(70, 14);
             // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.txtCategoryName;
-            this.layoutControlItem11.Location = new System.Drawing.Point(292, 48);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(292, 24);
-            this.layoutControlItem11.Text = "分类名称";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(70, 14);
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.txtSerialNumber;
@@ -428,6 +374,24 @@
             this.layoutControlItem12.Size = new System.Drawing.Size(292, 24);
             this.layoutControlItem12.Text = "流水号";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(70, 14);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.txtAmount;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(146, 24);
+            this.layoutControlItem9.Text = "金额(元)";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(70, 14);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.txtSummary;
+            this.layoutControlItem1.Location = new System.Drawing.Point(292, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(292, 24);
+            this.layoutControlItem1.Text = "摘要";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(70, 14);
             // 
             // layoutControlItem13
             // 
@@ -456,6 +420,42 @@
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.txtCategoryName;
+            this.layoutControlItem11.Location = new System.Drawing.Point(292, 48);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(292, 24);
+            this.layoutControlItem11.Text = "分类名称";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(70, 14);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txtOperator;
+            this.layoutControlItem4.Location = new System.Drawing.Point(292, 72);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(292, 24);
+            this.layoutControlItem4.Text = "经办人";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(70, 14);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.txtCreateTime;
+            this.layoutControlItem8.Location = new System.Drawing.Point(292, 96);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(292, 24);
+            this.layoutControlItem8.Text = "创建时间";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(70, 14);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.txtEditTime;
+            this.layoutControlItem10.Location = new System.Drawing.Point(292, 120);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(292, 24);
+            this.layoutControlItem10.Text = "编辑时间";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(70, 14);
+            // 
             // ExpenseInfoModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -483,21 +483,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 
         }

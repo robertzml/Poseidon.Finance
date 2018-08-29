@@ -93,6 +93,9 @@
             this.expenseGrid.Name = "expenseGrid";
             this.expenseGrid.ShowAddMenu = false;
             this.expenseGrid.ShowAssembly = false;
+            this.expenseGrid.ShowDeleteMenu = false;
+            this.expenseGrid.ShowEditMenu = false;
+            this.expenseGrid.ShowFindPanel = false;
             this.expenseGrid.ShowFooter = true;
             this.expenseGrid.ShowLineNumber = true;
             this.expenseGrid.ShowMenu = false;
