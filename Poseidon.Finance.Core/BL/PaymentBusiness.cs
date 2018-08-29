@@ -32,7 +32,7 @@ namespace Poseidon.Finance.Core.BL
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
-        public void Create(Payment entity, LoginUser user)
+        public void Create(Payment entity, ILoginUser user)
         {
             ExpenseBusiness expenseBusiness = new ExpenseBusiness();
 
@@ -65,7 +65,7 @@ namespace Poseidon.Finance.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public bool Update(Payment entity, LoginUser user)
+        public bool Update(Payment entity, ILoginUser user)
         {
             entity.UpdateBy = new UpdateStamp
             {
