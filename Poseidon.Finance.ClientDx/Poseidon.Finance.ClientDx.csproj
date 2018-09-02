@@ -141,6 +141,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Category.datasource" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Expense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Fund.datasource" />

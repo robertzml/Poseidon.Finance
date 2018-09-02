@@ -132,6 +132,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Category.datasource" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Expense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.Fund.datasource" />
