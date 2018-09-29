@@ -67,6 +67,11 @@ namespace Poseidon.Finance.ClientDx
                 errorMessage = "摘要不能为空";
                 return new Tuple<bool, string>(false, errorMessage);
             }
+            if (string.IsNullOrEmpty(this.txtOperator.Text.Trim()))
+            {
+                errorMessage = "经办人不能为空";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
             if (this.dpPaidDate.EditValue == null)
             {
                 errorMessage = "请选择付款日期";
@@ -86,26 +91,13 @@ namespace Poseidon.Finance.ClientDx
             entity.FundId = fund.Id;
             entity.FundName = fund.Name;
             entity.FundNumber = fund.Number;
-
             entity.Summary = this.txtSummary.Text;
-            entity.PaidDate = this.dpPaidDate.DateTime;
-
-            entity.SumFee = this.spSumFee.Value;
-            entity.Discount = this.spDiscount.Value;
-            entity.Remission = this.spRemission.Value;
+            entity.Operator = this.txtOperator.Text;
             entity.PaidFee = this.spPaidFee.Value;
+            entity.PaidDate = this.dpPaidDate.DateTime;
             entity.Remark = this.txtRemark.Text;
 
-            entity.ExpenseIds = this.selectExpenses.Select(r => r.Id).ToList();
-        }
-
-        /// <summary>
-        /// 计算应付款
-        /// </summary>
-        private void CalculatePaidFee()
-        {
-            var paidFee = this.spSumFee.Value * this.spDiscount.Value / 100 - this.spRemission.Value;
-            this.spPaidFee.Value = paidFee;
+            //entity.ExpenseIds = this.selectExpenses.Select(r => r.Id).ToList();
         }
         #endregion //Function
 
@@ -119,29 +111,8 @@ namespace Poseidon.Finance.ClientDx
         {
             this.selectExpenses = this.expenseGrid.GetSelectedRows();
 
-            this.spSumFee.Value = this.selectExpenses.Sum(r => r.Amount);
+            //this.spSumFee.Value = this.selectExpenses.Sum(r => r.Amount);
 
-            CalculatePaidFee();
-        }
-
-        /// <summary>
-        /// 改变折扣率
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void spDiscount_EditValueChanged(object sender, EventArgs e)
-        {
-            CalculatePaidFee();
-        }
-
-        /// <summary>
-        /// 改变减免费用
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void spRemission_EditValueChanged(object sender, EventArgs e)
-        {
-            CalculatePaidFee();
         }
 
         /// <summary>

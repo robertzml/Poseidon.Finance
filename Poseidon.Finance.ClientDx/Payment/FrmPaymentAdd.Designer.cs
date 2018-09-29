@@ -35,26 +35,22 @@
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.dpPaidDate = new DevExpress.XtraEditors.DateEdit();
             this.spPaidFee = new DevExpress.XtraEditors.SpinEdit();
-            this.spRemission = new DevExpress.XtraEditors.SpinEdit();
-            this.spDiscount = new DevExpress.XtraEditors.SpinEdit();
-            this.spSumFee = new DevExpress.XtraEditors.SpinEdit();
             this.txtSummary = new DevExpress.XtraEditors.TextEdit();
             this.luFund = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             this.expenseGrid = new Poseidon.Finance.Utility.ExpenseGrid();
+            this.txtOperator = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -67,26 +63,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.dpPaidDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpPaidDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spPaidFee.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spRemission.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spDiscount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spSumFee.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -124,13 +116,11 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtOperator);
             this.layoutControl1.Controls.Add(this.btnCalc);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.dpPaidDate);
             this.layoutControl1.Controls.Add(this.spPaidFee);
-            this.layoutControl1.Controls.Add(this.spRemission);
-            this.layoutControl1.Controls.Add(this.spDiscount);
-            this.layoutControl1.Controls.Add(this.spSumFee);
             this.layoutControl1.Controls.Add(this.txtSummary);
             this.layoutControl1.Controls.Add(this.luFund);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -162,7 +152,7 @@
             // dpPaidDate
             // 
             this.dpPaidDate.EditValue = null;
-            this.dpPaidDate.Location = new System.Drawing.Point(322, 12);
+            this.dpPaidDate.Location = new System.Drawing.Point(388, 36);
             this.dpPaidDate.Name = "dpPaidDate";
             this.dpPaidDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpPaidDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -170,7 +160,7 @@
             this.dpPaidDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpPaidDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpPaidDate.Size = new System.Drawing.Size(163, 20);
+            this.dpPaidDate.Size = new System.Drawing.Size(253, 20);
             this.dpPaidDate.StyleController = this.layoutControl1;
             this.dpPaidDate.TabIndex = 10;
             // 
@@ -181,74 +171,21 @@
             0,
             0,
             0});
-            this.spPaidFee.Location = new System.Drawing.Point(800, 36);
+            this.spPaidFee.Location = new System.Drawing.Point(85, 36);
             this.spPaidFee.Name = "spPaidFee";
-            this.spPaidFee.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.spPaidFee.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.spPaidFee.Properties.Appearance.Options.UseBackColor = true;
             this.spPaidFee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spPaidFee.Properties.ReadOnly = true;
-            this.spPaidFee.Size = new System.Drawing.Size(162, 20);
+            this.spPaidFee.Size = new System.Drawing.Size(226, 20);
             this.spPaidFee.StyleController = this.layoutControl1;
             this.spPaidFee.TabIndex = 9;
             // 
-            // spRemission
-            // 
-            this.spRemission.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spRemission.Location = new System.Drawing.Point(562, 36);
-            this.spRemission.Name = "spRemission";
-            this.spRemission.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spRemission.Size = new System.Drawing.Size(161, 20);
-            this.spRemission.StyleController = this.layoutControl1;
-            this.spRemission.TabIndex = 8;
-            this.spRemission.EditValueChanged += new System.EventHandler(this.spRemission_EditValueChanged);
-            // 
-            // spDiscount
-            // 
-            this.spDiscount.EditValue = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.spDiscount.Location = new System.Drawing.Point(322, 36);
-            this.spDiscount.Name = "spDiscount";
-            this.spDiscount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spDiscount.Properties.MaxValue = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.spDiscount.Size = new System.Drawing.Size(163, 20);
-            this.spDiscount.StyleController = this.layoutControl1;
-            this.spDiscount.TabIndex = 7;
-            this.spDiscount.EditValueChanged += new System.EventHandler(this.spDiscount_EditValueChanged);
-            // 
-            // spSumFee
-            // 
-            this.spSumFee.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spSumFee.Location = new System.Drawing.Point(85, 36);
-            this.spSumFee.Name = "spSumFee";
-            this.spSumFee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spSumFee.Size = new System.Drawing.Size(160, 20);
-            this.spSumFee.StyleController = this.layoutControl1;
-            this.spSumFee.TabIndex = 6;
-            // 
             // txtSummary
             // 
-            this.txtSummary.Location = new System.Drawing.Point(562, 12);
+            this.txtSummary.Location = new System.Drawing.Point(388, 12);
             this.txtSummary.Name = "txtSummary";
-            this.txtSummary.Size = new System.Drawing.Size(400, 20);
+            this.txtSummary.Size = new System.Drawing.Size(574, 20);
             this.txtSummary.StyleController = this.layoutControl1;
             this.txtSummary.TabIndex = 5;
             // 
@@ -274,7 +211,7 @@
             this.luFund.Properties.PopupWidth = 460;
             this.luFund.Properties.ShowFooter = false;
             this.luFund.Properties.ValueMember = "Id";
-            this.luFund.Size = new System.Drawing.Size(160, 20);
+            this.luFund.Size = new System.Drawing.Size(226, 20);
             this.luFund.StyleController = this.layoutControl1;
             this.luFund.TabIndex = 4;
             // 
@@ -284,15 +221,13 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem3,
             this.layoutControlItem8,
             this.layoutControlItem2,
             this.layoutControlItem6,
-            this.layoutControlItem4,
-            this.layoutControlItem7,
             this.layoutControlItem9,
             this.emptySpaceItem1,
-            this.layoutControlItem5});
+            this.layoutControlItem7,
+            this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(974, 197);
@@ -303,18 +238,9 @@
             this.layoutControlItem1.Control = this.luFund;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(237, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(303, 24);
             this.layoutControlItem1.Text = "经费本";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(70, 14);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.spSumFee;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(237, 24);
-            this.layoutControlItem3.Text = "费用合计(元)";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(70, 14);
             // 
             // layoutControlItem8
             // 
@@ -328,36 +254,27 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtSummary;
-            this.layoutControlItem2.Location = new System.Drawing.Point(477, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(303, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(477, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(651, 24);
             this.layoutControlItem2.Text = "摘要";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(70, 14);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.spPaidFee;
-            this.layoutControlItem6.Location = new System.Drawing.Point(715, 24);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(239, 24);
-            this.layoutControlItem6.Text = "实付款(元)";
+            this.layoutControlItem6.Size = new System.Drawing.Size(303, 24);
+            this.layoutControlItem6.Text = "付款金额(元)";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(70, 14);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.spDiscount;
-            this.layoutControlItem4.Location = new System.Drawing.Point(237, 24);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(240, 24);
-            this.layoutControlItem4.Text = "折扣率(%)";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(70, 14);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.dpPaidDate;
-            this.layoutControlItem7.Location = new System.Drawing.Point(237, 0);
+            this.layoutControlItem7.Location = new System.Drawing.Point(303, 24);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(240, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(330, 24);
             this.layoutControlItem7.Text = "付款日期";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(70, 14);
             // 
@@ -377,15 +294,6 @@
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(713, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.spRemission;
-            this.layoutControlItem5.Location = new System.Drawing.Point(477, 24);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(238, 24);
-            this.layoutControlItem5.Text = "减免费用(元)";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(70, 14);
             // 
             // tableLayoutPanel1
             // 
@@ -432,12 +340,32 @@
             this.expenseGrid.Name = "expenseGrid";
             this.expenseGrid.ShowAddMenu = false;
             this.expenseGrid.ShowAssembly = false;
+            this.expenseGrid.ShowDeleteMenu = false;
+            this.expenseGrid.ShowEditMenu = false;
+            this.expenseGrid.ShowFindPanel = false;
             this.expenseGrid.ShowFooter = false;
             this.expenseGrid.ShowLineNumber = true;
             this.expenseGrid.ShowMenu = false;
             this.expenseGrid.ShowNavigator = false;
             this.expenseGrid.Size = new System.Drawing.Size(974, 197);
             this.expenseGrid.TabIndex = 0;
+            // 
+            // txtOperator
+            // 
+            this.txtOperator.Location = new System.Drawing.Point(718, 36);
+            this.txtOperator.Name = "txtOperator";
+            this.txtOperator.Size = new System.Drawing.Size(244, 20);
+            this.txtOperator.StyleController = this.layoutControl1;
+            this.txtOperator.TabIndex = 13;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txtOperator;
+            this.layoutControlItem3.Location = new System.Drawing.Point(633, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(321, 24);
+            this.layoutControlItem3.Text = "经办人";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(70, 14);
             // 
             // FrmPaymentAdd
             // 
@@ -458,26 +386,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.dpPaidDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpPaidDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spPaidFee.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spRemission.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spDiscount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spSumFee.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,17 +413,11 @@
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.DateEdit dpPaidDate;
         private DevExpress.XtraEditors.SpinEdit spPaidFee;
-        private DevExpress.XtraEditors.SpinEdit spRemission;
-        private DevExpress.XtraEditors.SpinEdit spDiscount;
-        private DevExpress.XtraEditors.SpinEdit spSumFee;
         private DevExpress.XtraEditors.TextEdit txtSummary;
         private DevExpress.XtraEditors.LookUpEdit luFund;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
@@ -510,5 +428,7 @@
         private DevExpress.XtraEditors.SimpleButton btnCalc;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.TextEdit txtOperator;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

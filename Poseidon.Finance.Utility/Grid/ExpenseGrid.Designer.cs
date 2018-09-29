@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.menuView = new System.Windows.Forms.ToolStripMenuItem();
             this.colSerialNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSummary = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,7 +57,7 @@
             // 
             // dgcEntity
             // 
-            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
+            this.dgcEntity.Size = new System.Drawing.Size(826, 378);
             // 
             // dgvEntity
             // 
@@ -223,6 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "ExpenseGrid";
+            this.Size = new System.Drawing.Size(826, 378);
             this.Load += new System.EventHandler(this.ExpenseGrid_Load);
             this.Controls.SetChildIndex(this.dataNavigator, 0);
             this.Controls.SetChildIndex(this.dgcEntity, 0);

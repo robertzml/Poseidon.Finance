@@ -36,10 +36,10 @@ namespace Poseidon.Finance.Core.BL
         {
             ExpenseBusiness expenseBusiness = new ExpenseBusiness();
 
-            foreach(var item in entity.ExpenseIds)
-            {
-                expenseBusiness.PayExpense(item);
-            }
+            //foreach(var item in entity.ExpenseIds)
+            //{
+            //    expenseBusiness.PayExpense(item);
+            //}
 
             entity.CreateBy = new UpdateStamp
             {

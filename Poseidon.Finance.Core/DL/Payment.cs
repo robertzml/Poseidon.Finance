@@ -46,27 +46,15 @@ namespace Poseidon.Finance.Core.DL
         public string Summary { get; set; }
 
         /// <summary>
-        /// 费用合计
+        /// 经办人
         /// </summary>
-        [Display(Name = "费用合计")]
-        public decimal SumFee { get; set; }
+        [Display(Name = "经办人")]
+        public string Operator { get; set; }
 
         /// <summary>
-        /// 折扣率
+        /// 付款金额
         /// </summary>
-        [Display(Name = "折扣率")]
-        public decimal Discount { get; set; }
-
-        /// <summary>
-        /// 减免
-        /// </summary>
-        [Display(Name = "减免")]
-        public decimal Remission { get; set; }
-
-        /// <summary>
-        /// 实付款
-        /// </summary>
-        [Display(Name = "实付款")]
+        [Display(Name = "付款金额")]
         public decimal PaidFee { get; set; }
 
         /// <summary>
@@ -82,10 +70,52 @@ namespace Poseidon.Finance.Core.DL
         public bool IsPost { get; set; }
 
         /// <summary>
-        /// 费用记录
+        /// 付款明细
         /// </summary>
-        [Display(Name = "费用记录")]
-        public List<string> ExpenseIds { get; set; }
+        [Display(Name = "付款明细")]
+        public List<PaymentRecord> Records { get; set; }
         #endregion //Property
+    }
+
+    /// <summary>
+    /// 付款记录类
+    /// </summary>
+    public class PaymentRecord : BaseEntity
+    {
+        /// <summary>
+        /// 付款ID
+        /// </summary>
+        [Display(Name = "付款ID")]
+        public string PaymentId { get; set; }
+
+        /// <summary>
+        /// 费用ID
+        /// </summary>
+        [Display(Name = "费用ID")]
+        public string ExpenseId { get; set; }
+
+        /// <summary>
+        /// 费用总金额
+        /// </summary>
+        [Display(Name = "费用总金额")]
+        public decimal ExpenseFee { get; set; }
+
+        /// <summary>
+        /// 待支付金额
+        /// </summary>
+        [Display(Name = "待支付金额")]
+        public decimal RemainFee { get; set; }
+
+        /// <summary>
+        /// 付款金额
+        /// </summary>
+        [Display(Name = "付款金额")]
+        public decimal PaidFee { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [Display(Name = "备注")]
+        public string Remark { get; set; }
     }
 }

@@ -33,15 +33,13 @@
             this.colFundName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFundNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSummary = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSumFee = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRemission = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPaidFee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPaidDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIsPost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOperator = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -63,9 +61,7 @@
             this.colFundName,
             this.colFundNumber,
             this.colSummary,
-            this.colSumFee,
-            this.colDiscount,
-            this.colRemission,
+            this.colOperator,
             this.colPaidFee,
             this.colPaidDate,
             this.colIsPost,
@@ -118,43 +114,15 @@
             this.colSummary.Visible = true;
             this.colSummary.VisibleIndex = 3;
             // 
-            // colSumFee
-            // 
-            this.colSumFee.Caption = "费用合计(元)";
-            this.colSumFee.FieldName = "SumFee";
-            this.colSumFee.Name = "colSumFee";
-            this.colSumFee.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SumFee", "合计={0:0.##}")});
-            this.colSumFee.Visible = true;
-            this.colSumFee.VisibleIndex = 4;
-            // 
-            // colDiscount
-            // 
-            this.colDiscount.Caption = "折扣率(%)";
-            this.colDiscount.FieldName = "Discount";
-            this.colDiscount.Name = "colDiscount";
-            this.colDiscount.Visible = true;
-            this.colDiscount.VisibleIndex = 5;
-            // 
-            // colRemission
-            // 
-            this.colRemission.Caption = "减免费用(元)";
-            this.colRemission.FieldName = "Remission";
-            this.colRemission.Name = "colRemission";
-            this.colRemission.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Remission", "合计={0:0.##}")});
-            this.colRemission.Visible = true;
-            this.colRemission.VisibleIndex = 6;
-            // 
             // colPaidFee
             // 
-            this.colPaidFee.Caption = "实付款(元)";
+            this.colPaidFee.Caption = "付款金额(元)";
             this.colPaidFee.FieldName = "PaidFee";
             this.colPaidFee.Name = "colPaidFee";
             this.colPaidFee.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PaidFee", "合计={0:0.##}")});
             this.colPaidFee.Visible = true;
-            this.colPaidFee.VisibleIndex = 7;
+            this.colPaidFee.VisibleIndex = 5;
             // 
             // colPaidDate
             // 
@@ -162,7 +130,7 @@
             this.colPaidDate.FieldName = "PaidDate";
             this.colPaidDate.Name = "colPaidDate";
             this.colPaidDate.Visible = true;
-            this.colPaidDate.VisibleIndex = 8;
+            this.colPaidDate.VisibleIndex = 6;
             // 
             // colIsPost
             // 
@@ -170,7 +138,7 @@
             this.colIsPost.FieldName = "IsPost";
             this.colIsPost.Name = "colIsPost";
             this.colIsPost.Visible = true;
-            this.colIsPost.VisibleIndex = 9;
+            this.colIsPost.VisibleIndex = 7;
             // 
             // colRemark
             // 
@@ -178,7 +146,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 10;
+            this.colRemark.VisibleIndex = 8;
             // 
             // colStatus
             // 
@@ -189,6 +157,14 @@
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            // 
+            // colOperator
+            // 
+            this.colOperator.Caption = "经办人";
+            this.colOperator.FieldName = "Operator";
+            this.colOperator.Name = "colOperator";
+            this.colOperator.Visible = true;
+            this.colOperator.VisibleIndex = 4;
             // 
             // PaymentGrid
             // 
@@ -209,14 +185,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFundName;
         private DevExpress.XtraGrid.Columns.GridColumn colFundNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colSummary;
-        private DevExpress.XtraGrid.Columns.GridColumn colSumFee;
-        private DevExpress.XtraGrid.Columns.GridColumn colDiscount;
-        private DevExpress.XtraGrid.Columns.GridColumn colRemission;
         private DevExpress.XtraGrid.Columns.GridColumn colPaidFee;
         private DevExpress.XtraGrid.Columns.GridColumn colPaidDate;
         private DevExpress.XtraGrid.Columns.GridColumn colIsPost;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colOperator;
     }
 }
