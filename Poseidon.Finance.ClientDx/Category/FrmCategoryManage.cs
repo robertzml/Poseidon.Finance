@@ -53,6 +53,21 @@ namespace Poseidon.Finance.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmCategoryAdd));
             LoadCategory();
         }
+
+        /// <summary>
+        /// 编辑费用分类
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var id = this.trCategory.GetCurrentSelectedId();
+            if (string.IsNullOrEmpty(id))
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmCategoryEdit), new object[] { id });
+            LoadCategory();
+        }
         #endregion //Event
     }
 }

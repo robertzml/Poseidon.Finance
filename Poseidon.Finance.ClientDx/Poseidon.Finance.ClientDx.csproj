@@ -78,6 +78,12 @@
     <Compile Include="Expense\FrmExpenseEdit.Designer.cs">
       <DependentUpon>FrmExpenseEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Category\FrmCategoryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\FrmCategoryEdit.Designer.cs">
+      <DependentUpon>FrmCategoryEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment\FrmPaymentAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Category\FrmCategoryAdd.resx">
       <DependentUpon>FrmCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\FrmCategoryEdit.resx">
+      <DependentUpon>FrmCategoryEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Category\FrmCategoryManage.resx">
       <DependentUpon>FrmCategoryManage.cs</DependentUpon>
