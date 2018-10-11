@@ -10,6 +10,7 @@ namespace Poseidon.Finance.Core.DAL.Mongo
     using MongoDB.Driver;
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Common;
     using Poseidon.Data;
     using Poseidon.Finance.Core.DL;
     using Poseidon.Finance.Core.IDAL;
@@ -116,10 +117,10 @@ namespace Poseidon.Finance.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        public override bool Update(Category entity)
+        public override (bool success, string errorMessage) Update(Category entity)
         {
             if (!CheckDuplicate(entity))
-                throw new PoseidonException(ErrorCode.DuplicateCode);
+                return (false, ErrorCode.DuplicateCode.DisplayName());
 
             return base.Update(entity);
         }
