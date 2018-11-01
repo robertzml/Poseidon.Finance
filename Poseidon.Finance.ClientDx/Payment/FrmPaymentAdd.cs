@@ -42,9 +42,7 @@ namespace Poseidon.Finance.ClientDx
             this.selectExpenses = new List<Expense>();
 
             this.bsFund.DataSource = BusinessFactory<FundBusiness>.Instance.FindAll();
-
-            var exp = BusinessFactory<ExpenseBusiness>.Instance.FindUnPaid();
-            this.expenseGrid.DataSource = exp.ToList();
+            this.paymentRecordGrid.DataSource = new List<PaymentRecord>();
 
             base.InitForm();
         }
@@ -53,32 +51,65 @@ namespace Poseidon.Finance.ClientDx
         /// 输入检查
         /// </summary>
         /// <returns></returns>
-        private Tuple<bool, string> CheckInput()
+        private (bool success, string errorMessage) CheckInput()
         {
             string errorMessage = "";
 
             if (this.luFund.EditValue == null)
             {
                 errorMessage = "请选择经费本";
-                return new Tuple<bool, string>(false, errorMessage);
+                return (false, errorMessage);
             }
             if (string.IsNullOrEmpty(this.txtSummary.Text.Trim()))
             {
                 errorMessage = "摘要不能为空";
-                return new Tuple<bool, string>(false, errorMessage);
+                return (false, errorMessage);
             }
             if (string.IsNullOrEmpty(this.txtOperator.Text.Trim()))
             {
                 errorMessage = "经办人不能为空";
-                return new Tuple<bool, string>(false, errorMessage);
+                return (false, errorMessage);
             }
             if (this.dpPaidDate.EditValue == null)
             {
                 errorMessage = "请选择付款日期";
-                return new Tuple<bool, string>(false, errorMessage);
+                return (false, errorMessage);
+            }
+            foreach(var item in this.paymentRecordGrid.DataSource)
+            {
+                if (item.PaidFee <= 0)
+                {
+                    errorMessage = "付款金额必须大于0";
+                    return (false, errorMessage);
+                }
             }
 
-            return new Tuple<bool, string>(true, "");
+            return (true, "");
+        }
+
+        /// <summary>
+        /// 转换为支付记录
+        /// </summary>
+        /// <param name="expenses">费用记录</param>
+        private void TransToPaymentRecord(List<Expense> expenses)
+        {
+            var data = this.paymentRecordGrid.DataSource;
+
+            foreach(var item in expenses)
+            {
+                if (data.Any(r => r.ExpenseId == item.Id))
+                    continue;
+
+                PaymentRecord record = new PaymentRecord();
+                record.ExpenseId = item.Id;
+                record.ExpenseFee = item.Amount;
+                record.RemainFee = item.Amount - item.PaidFee;
+                record.Remark = "";
+
+                data.Add(record);
+            }
+
+            this.paymentRecordGrid.UpdateBindingData();
         }
 
         /// <summary>
@@ -97,22 +128,27 @@ namespace Poseidon.Finance.ClientDx
             entity.PaidDate = this.dpPaidDate.DateTime;
             entity.Remark = this.txtRemark.Text;
 
-            //entity.ExpenseIds = this.selectExpenses.Select(r => r.Id).ToList();
+            entity.Records = this.paymentRecordGrid.DataSource;
+            foreach(var item in entity.Records)
+            {
+                item.Remark = item.Remark ?? "";
+            }
         }
         #endregion //Function
 
         #region Event
         /// <summary>
-        /// 确认用款选择
+        /// 增加付款记录
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnCalc_Click(object sender, EventArgs e)
+        private void btnAddRecord_Click(object sender, EventArgs e)
         {
-            this.selectExpenses = this.expenseGrid.GetSelectedRows();
-
-            //this.spSumFee.Value = this.selectExpenses.Sum(r => r.Amount);
-
+            FrmExpenseSearch frm = new FrmExpenseSearch();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                TransToPaymentRecord(frm.SelectExpenses);
+            }
         }
 
         /// <summary>
@@ -123,9 +159,9 @@ namespace Poseidon.Finance.ClientDx
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             var input = CheckInput();
-            if (!input.Item1)
+            if (!input.success)
             {
-                MessageUtil.ShowError(input.Item2);
+                MessageUtil.ShowError(input.errorMessage);
                 return;
             }
 
@@ -146,5 +182,6 @@ namespace Poseidon.Finance.ClientDx
             }
         }
         #endregion //Event
+
     }
 }

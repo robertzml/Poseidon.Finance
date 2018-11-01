@@ -31,26 +31,28 @@
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.btnCalc = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAddRecord = new DevExpress.XtraEditors.SimpleButton();
+            this.txtOperator = new DevExpress.XtraEditors.TextEdit();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.dpPaidDate = new DevExpress.XtraEditors.DateEdit();
             this.spPaidFee = new DevExpress.XtraEditors.SpinEdit();
             this.txtSummary = new DevExpress.XtraEditors.TextEdit();
             this.luFund = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
-            this.expenseGrid = new Poseidon.Finance.Utility.ExpenseGrid();
-            this.txtOperator = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnDeleteRecord = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.paymentRecordGrid = new Poseidon.Finance.Utility.PaymentRecordGrid();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -59,26 +61,27 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpPaidDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpPaidDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spPaidFee.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -116,8 +119,9 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnDeleteRecord);
+            this.layoutControl1.Controls.Add(this.btnAddRecord);
             this.layoutControl1.Controls.Add(this.txtOperator);
-            this.layoutControl1.Controls.Add(this.btnCalc);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.dpPaidDate);
             this.layoutControl1.Controls.Add(this.spPaidFee);
@@ -131,15 +135,23 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // btnCalc
+            // btnAddRecord
             // 
-            this.btnCalc.Location = new System.Drawing.Point(725, 163);
-            this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(237, 22);
-            this.btnCalc.StyleController = this.layoutControl1;
-            this.btnCalc.TabIndex = 12;
-            this.btnCalc.Text = "确认用款选择";
-            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
+            this.btnAddRecord.Location = new System.Drawing.Point(601, 163);
+            this.btnAddRecord.Name = "btnAddRecord";
+            this.btnAddRecord.Size = new System.Drawing.Size(159, 22);
+            this.btnAddRecord.StyleController = this.layoutControl1;
+            this.btnAddRecord.TabIndex = 14;
+            this.btnAddRecord.Text = "增加付款记录";
+            this.btnAddRecord.Click += new System.EventHandler(this.btnAddRecord_Click);
+            // 
+            // txtOperator
+            // 
+            this.txtOperator.Location = new System.Drawing.Point(718, 36);
+            this.txtOperator.Name = "txtOperator";
+            this.txtOperator.Size = new System.Drawing.Size(244, 20);
+            this.txtOperator.StyleController = this.layoutControl1;
+            this.txtOperator.TabIndex = 13;
             // 
             // txtRemark
             // 
@@ -196,15 +208,15 @@
             this.luFund.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.luFund.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "项目名称", 150, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Number", "项目号", 120, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Principal", "负责人", 50, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Balance", "项目余额", 70, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("AvailableBalance", "可用余额", 70, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DatasetCode", "Dataset Code", 84, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "Remark", 51, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Status", "Status", 45, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "项目名称", 150, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Number", "项目号", 120, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Principal", "负责人", 50, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Balance", "项目余额", 70, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("AvailableBalance", "可用余额", 70, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DatasetCode", "Dataset Code", 84, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "Remark", 51, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Status", "Status", 45, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.luFund.Properties.DataSource = this.bsFund;
             this.luFund.Properties.DisplayMember = "Name";
             this.luFund.Properties.NullText = "请选择";
@@ -215,6 +227,10 @@
             this.luFund.StyleController = this.layoutControl1;
             this.luFund.TabIndex = 4;
             // 
+            // bsFund
+            // 
+            this.bsFund.DataSource = typeof(Poseidon.Finance.Core.DL.Fund);
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -224,11 +240,11 @@
             this.layoutControlItem8,
             this.layoutControlItem2,
             this.layoutControlItem6,
-            this.layoutControlItem9,
             this.emptySpaceItem1,
             this.layoutControlItem7,
-            this.layoutControlItem3});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(974, 197);
             this.layoutControlGroup1.TextVisible = false;
@@ -269,6 +285,14 @@
             this.layoutControlItem6.Text = "付款金额(元)";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(70, 14);
             // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 151);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(589, 26);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.dpPaidDate;
@@ -278,22 +302,23 @@
             this.layoutControlItem7.Text = "付款日期";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(70, 14);
             // 
-            // layoutControlItem9
+            // layoutControlItem3
             // 
-            this.layoutControlItem9.Control = this.btnCalc;
-            this.layoutControlItem9.Location = new System.Drawing.Point(713, 151);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(241, 26);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
+            this.layoutControlItem3.Control = this.txtOperator;
+            this.layoutControlItem3.Location = new System.Drawing.Point(633, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(321, 24);
+            this.layoutControlItem3.Text = "经办人";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(70, 14);
             // 
-            // emptySpaceItem1
+            // layoutControlItem4
             // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 151);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(713, 26);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.Control = this.btnAddRecord;
+            this.layoutControlItem4.Location = new System.Drawing.Point(589, 151);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(163, 26);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -313,59 +338,55 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.expenseGrid);
+            this.groupControl2.Controls.Add(this.paymentRecordGrid);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 229);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(978, 220);
             this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "用款列表";
+            this.groupControl2.Text = "相关付款记录";
             // 
-            // bsFund
+            // btnDeleteRecord
             // 
-            this.bsFund.DataSource = typeof(Poseidon.Finance.Core.DL.Fund);
+            this.btnDeleteRecord.Location = new System.Drawing.Point(764, 163);
+            this.btnDeleteRecord.Name = "btnDeleteRecord";
+            this.btnDeleteRecord.Size = new System.Drawing.Size(198, 22);
+            this.btnDeleteRecord.StyleController = this.layoutControl1;
+            this.btnDeleteRecord.TabIndex = 15;
+            this.btnDeleteRecord.Text = "删除付款记录";
             // 
-            // expenseGrid
+            // layoutControlItem5
             // 
-            this.expenseGrid.AllowFilter = false;
-            this.expenseGrid.AllowGroup = false;
-            this.expenseGrid.AllowSort = true;
-            this.expenseGrid.DataSource = null;
-            this.expenseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expenseGrid.Editable = false;
-            this.expenseGrid.EnableMasterView = false;
-            this.expenseGrid.EnableMultiCheckSelect = true;
-            this.expenseGrid.EnableMultiSelect = true;
-            this.expenseGrid.Location = new System.Drawing.Point(2, 21);
-            this.expenseGrid.Name = "expenseGrid";
-            this.expenseGrid.ShowAddMenu = false;
-            this.expenseGrid.ShowAssembly = false;
-            this.expenseGrid.ShowDeleteMenu = false;
-            this.expenseGrid.ShowEditMenu = false;
-            this.expenseGrid.ShowFindPanel = false;
-            this.expenseGrid.ShowFooter = false;
-            this.expenseGrid.ShowLineNumber = true;
-            this.expenseGrid.ShowMenu = false;
-            this.expenseGrid.ShowNavigator = false;
-            this.expenseGrid.Size = new System.Drawing.Size(974, 197);
-            this.expenseGrid.TabIndex = 0;
+            this.layoutControlItem5.Control = this.btnDeleteRecord;
+            this.layoutControlItem5.Location = new System.Drawing.Point(752, 151);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(202, 26);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
-            // txtOperator
+            // paymentRecordGrid
             // 
-            this.txtOperator.Location = new System.Drawing.Point(718, 36);
-            this.txtOperator.Name = "txtOperator";
-            this.txtOperator.Size = new System.Drawing.Size(244, 20);
-            this.txtOperator.StyleController = this.layoutControl1;
-            this.txtOperator.TabIndex = 13;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.txtOperator;
-            this.layoutControlItem3.Location = new System.Drawing.Point(633, 24);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(321, 24);
-            this.layoutControlItem3.Text = "经办人";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(70, 14);
+            this.paymentRecordGrid.AllowFilter = false;
+            this.paymentRecordGrid.AllowGroup = false;
+            this.paymentRecordGrid.AllowSort = true;
+            this.paymentRecordGrid.DataSource = null;
+            this.paymentRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.paymentRecordGrid.Editable = true;
+            this.paymentRecordGrid.EnableMasterView = false;
+            this.paymentRecordGrid.EnableMultiSelect = false;
+            this.paymentRecordGrid.Location = new System.Drawing.Point(2, 21);
+            this.paymentRecordGrid.Name = "paymentRecordGrid";
+            this.paymentRecordGrid.ShowAddMenu = false;
+            this.paymentRecordGrid.ShowDeleteMenu = false;
+            this.paymentRecordGrid.ShowEditMenu = false;
+            this.paymentRecordGrid.ShowFindPanel = false;
+            this.paymentRecordGrid.ShowFooter = true;
+            this.paymentRecordGrid.ShowLineNumber = true;
+            this.paymentRecordGrid.ShowMenu = false;
+            this.paymentRecordGrid.ShowNavigator = false;
+            this.paymentRecordGrid.ShowPaymentColumn = false;
+            this.paymentRecordGrid.Size = new System.Drawing.Size(974, 197);
+            this.paymentRecordGrid.TabIndex = 0;
             // 
             // FrmPaymentAdd
             // 
@@ -382,26 +403,27 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpPaidDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpPaidDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spPaidFee.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOperator.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -424,11 +446,13 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.BindingSource bsFund;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private Utility.ExpenseGrid expenseGrid;
-        private DevExpress.XtraEditors.SimpleButton btnCalc;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.TextEdit txtOperator;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private Utility.PaymentRecordGrid paymentRecordGrid;
+        private DevExpress.XtraEditors.SimpleButton btnAddRecord;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.SimpleButton btnDeleteRecord;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }
