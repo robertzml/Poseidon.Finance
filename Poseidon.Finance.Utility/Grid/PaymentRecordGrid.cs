@@ -44,7 +44,7 @@ namespace Poseidon.Finance.Utility
         /// <param name="e"></param>
         private void PaymentRecordGrid_Load(object sender, EventArgs e)
         {
-
+            this.colPaymentId.Visible = this.showPaymentColumn;
         }
 
         /// <summary>

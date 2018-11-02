@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Poseidon.Finance.Core.BL
 {
+    using MongoDB.Bson;
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
     using Poseidon.Finance.Core.DL;
@@ -36,10 +37,11 @@ namespace Poseidon.Finance.Core.BL
         {
             ExpenseBusiness expenseBusiness = new ExpenseBusiness();
 
-            //foreach(var item in entity.ExpenseIds)
-            //{
-            //    expenseBusiness.PayExpense(item);
-            //}
+            foreach (var item in entity.Records)
+            {
+                item.PaymentId = "";
+                expenseBusiness.PayExpense(item.ExpenseId, item.PaidFee);
+            }
 
             entity.CreateBy = new UpdateStamp
             {
@@ -57,6 +59,12 @@ namespace Poseidon.Finance.Core.BL
             entity.IsPost = false;
             entity.Status = 0;
             base.Create(entity);
+
+            foreach (var item in entity.Records)
+            {
+                item.PaymentId = entity.Id;
+            }
+            base.Update(entity);
         }
 
         /// <summary>

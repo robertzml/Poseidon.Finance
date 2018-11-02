@@ -50,12 +50,19 @@ namespace Poseidon.Finance.Core.BL
         /// 费用记录付款
         /// </summary>
         /// <param name="id">费用ID</param>
-        /// <param name="paid">是否支付</param>
+        /// <param name="paidFee">支付费用</param>
         /// <returns></returns>
-        public bool PayExpense(string id, bool paid = true)
+        public bool PayExpense(string id, decimal paidFee)
         {
             var entity = this.baseDal.FindById(id);
-            entity.IsPaid = paid;
+
+            entity.PaidFee += paidFee;
+
+            if (entity.Amount < entity.PaidFee)
+                return false;
+
+            if (entity.Amount == entity.PaidFee)
+                entity.IsPaid = true;
 
             var result = this.baseDal.Update(entity);
             return result.success;

@@ -41,6 +41,7 @@ namespace Poseidon.Finance.ClientDx
         {
             this.selectExpenses = new List<Expense>();
 
+            this.dpPaidDate.DateTime = DateTime.Now.Date;
             this.bsFund.DataSource = BusinessFactory<FundBusiness>.Instance.FindAll();
             this.paymentRecordGrid.DataSource = new List<PaymentRecord>();
 
@@ -75,11 +76,16 @@ namespace Poseidon.Finance.ClientDx
                 errorMessage = "请选择付款日期";
                 return (false, errorMessage);
             }
-            foreach(var item in this.paymentRecordGrid.DataSource)
+            foreach (var item in this.paymentRecordGrid.DataSource)
             {
                 if (item.PaidFee <= 0)
                 {
                     errorMessage = "付款金额必须大于0";
+                    return (false, errorMessage);
+                }
+                if (item.PaidFee > item.RemainFee)
+                {
+                    errorMessage = "付款金额大于待付金额";
                     return (false, errorMessage);
                 }
             }
@@ -95,7 +101,7 @@ namespace Poseidon.Finance.ClientDx
         {
             var data = this.paymentRecordGrid.DataSource;
 
-            foreach(var item in expenses)
+            foreach (var item in expenses)
             {
                 if (data.Any(r => r.ExpenseId == item.Id))
                     continue;
@@ -123,16 +129,17 @@ namespace Poseidon.Finance.ClientDx
             entity.FundName = fund.Name;
             entity.FundNumber = fund.Number;
             entity.Summary = this.txtSummary.Text;
-            entity.Operator = this.txtOperator.Text;
-            entity.PaidFee = this.spPaidFee.Value;
+            entity.Operator = this.txtOperator.Text;         
             entity.PaidDate = this.dpPaidDate.DateTime;
             entity.Remark = this.txtRemark.Text;
 
-            entity.Records = this.paymentRecordGrid.DataSource;
-            foreach(var item in entity.Records)
+            entity.Records = this.paymentRecordGrid.DataSource;            
+            foreach (var item in entity.Records)
             {
                 item.Remark = item.Remark ?? "";
             }
+
+            entity.PaidFee = entity.Records.Sum(r => r.PaidFee);
         }
         #endregion //Function
 
@@ -148,6 +155,20 @@ namespace Poseidon.Finance.ClientDx
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 TransToPaymentRecord(frm.SelectExpenses);
+            }
+        }
+
+        /// <summary>
+        /// 删除付款记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDeleteRecord_Click(object sender, EventArgs e)
+        {
+            var select = this.paymentRecordGrid.GetCurrentSelect();
+            if (select != null)
+            {
+                this.paymentRecordGrid.DataSource.Remove(select);
             }
         }
 
@@ -182,6 +203,5 @@ namespace Poseidon.Finance.ClientDx
             }
         }
         #endregion //Event
-
     }
 }
