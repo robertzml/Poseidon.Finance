@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Finance.ClientDx
 {
-    partial class FrmPaymentAdd
+    partial class FrmPaymentEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnDeleteRecord = new DevExpress.XtraEditors.SimpleButton();
@@ -39,7 +40,6 @@
             this.spPaidFee = new DevExpress.XtraEditors.SpinEdit();
             this.txtSummary = new DevExpress.XtraEditors.TextEdit();
             this.luFund = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -50,13 +50,14 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.paymentRecordGrid = new Poseidon.Finance.Utility.PaymentRecordGrid();
+            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
             this.plBottom.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -68,7 +69,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spPaidFee.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
@@ -79,9 +79,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -91,7 +91,6 @@
             // btnConfirm
             // 
             this.btnConfirm.Location = new System.Drawing.Point(778, 15);
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // plFill
             // 
@@ -107,6 +106,22 @@
             this.plBottom.Location = new System.Drawing.Point(0, 452);
             this.plBottom.Size = new System.Drawing.Size(984, 60);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 452);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.layoutControl1);
@@ -114,7 +129,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(978, 220);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "付款信息";
             // 
             // layoutControl1
@@ -238,10 +253,6 @@
             this.luFund.StyleController = this.layoutControl1;
             this.luFund.TabIndex = 4;
             // 
-            // bsFund
-            // 
-            this.bsFund.DataSource = typeof(Poseidon.Finance.Core.DL.Fund);
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -340,22 +351,6 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 452);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.paymentRecordGrid);
@@ -363,7 +358,7 @@
             this.groupControl2.Location = new System.Drawing.Point(3, 229);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(978, 220);
-            this.groupControl2.TabIndex = 1;
+            this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "相关付款记录";
             // 
             // paymentRecordGrid
@@ -390,17 +385,24 @@
             this.paymentRecordGrid.Size = new System.Drawing.Size(974, 197);
             this.paymentRecordGrid.TabIndex = 0;
             // 
-            // FrmPaymentAdd
+            // bsFund
+            // 
+            this.bsFund.DataSource = typeof(Poseidon.Finance.Core.DL.Fund);
+            // 
+            // FrmPaymentEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 512);
-            this.Name = "FrmPaymentAdd";
-            this.Text = "新增付款";
+            this.MaximumSize = new System.Drawing.Size(1000, 550);
+            this.MinimumSize = new System.Drawing.Size(1000, 550);
+            this.Name = "FrmPaymentEdit";
+            this.Text = "编辑付款";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
             this.plBottom.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -412,7 +414,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spPaidFee.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
@@ -423,17 +424,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.SimpleButton btnDeleteRecord;
+        private DevExpress.XtraEditors.SimpleButton btnAddRecord;
+        private DevExpress.XtraEditors.TextEdit txtOperator;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.DateEdit dpPaidDate;
         private DevExpress.XtraEditors.SpinEdit spPaidFee;
@@ -441,20 +446,16 @@
         private DevExpress.XtraEditors.LookUpEdit luFund;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.BindingSource bsFund;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.TextEdit txtOperator;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private Utility.PaymentRecordGrid paymentRecordGrid;
-        private DevExpress.XtraEditors.SimpleButton btnAddRecord;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.SimpleButton btnDeleteRecord;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private Utility.PaymentRecordGrid paymentRecordGrid;
+        private System.Windows.Forms.BindingSource bsFund;
     }
 }

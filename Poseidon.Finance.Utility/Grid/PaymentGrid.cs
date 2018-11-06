@@ -25,5 +25,27 @@ namespace Poseidon.Finance.Utility
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Event
+        /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PaymentGrid_Load(object sender, EventArgs e)
+        {
+            this.AppendMenu(this.contextMenuStrip1);
+        }
+        
+        /// <summary>
+        /// 查看明细
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuViewDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion //Event
     }
 }

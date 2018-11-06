@@ -40,9 +40,12 @@
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOperator = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.menuViewDetails = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bsEntity
@@ -166,14 +169,32 @@
             this.colOperator.Visible = true;
             this.colOperator.VisibleIndex = 4;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuViewDetails});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            // 
+            // menuViewDetails
+            // 
+            this.menuViewDetails.Name = "menuViewDetails";
+            this.menuViewDetails.Size = new System.Drawing.Size(180, 22);
+            this.menuViewDetails.Text = "查看明细";
+            this.menuViewDetails.Click += new System.EventHandler(this.menuViewDetails_Click);
+            // 
             // PaymentGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "PaymentGrid";
+            this.Load += new System.EventHandler(this.PaymentGrid_Load);
+            this.Controls.SetChildIndex(this.dataNavigator, 0);
+            this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -192,5 +213,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colOperator;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuViewDetails;
     }
 }
