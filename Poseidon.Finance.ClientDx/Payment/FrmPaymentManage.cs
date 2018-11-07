@@ -14,6 +14,7 @@ namespace Poseidon.Finance.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Finance.Core.BL;
     using Poseidon.Finance.Core.DL;
+    using Poseidon.Finance.Core.Utility;
 
     /// <summary>
     /// 付款管理窗体
@@ -21,10 +22,6 @@ namespace Poseidon.Finance.ClientDx
     public partial class FrmPaymentManage : BaseMdiForm
     {
         #region Field
-        /// <summary>
-        /// 付款数据
-        /// </summary>
-        private List<Payment> paymentList;
         #endregion //Field
 
         #region Constructor
@@ -37,46 +34,54 @@ namespace Poseidon.Finance.ClientDx
         #region Function
         protected override void InitForm()
         {
-            this.LoadPayment();
+            this.InitYearTree();
 
             base.InitForm();
         }
 
         /// <summary>
-        /// 载入付款记录
+        /// 初始化年度树形控件
         /// </summary>
-        private void LoadPayment()
+        private void InitYearTree()
         {
-            this.paymentList = BusinessFactory<PaymentBusiness>.Instance.FindAll().ToList();
-            this.paymentGrid.DataSource = this.paymentList;
+            var top = this.trYear.AppendNode(new object[] { "全部" }, -1, 0);
+
+            int nowYear = DateTime.Now.Year;
+            for(int i = nowYear; i >= FinanceConstant.StartYear; i--)
+            {
+                this.trYear.AppendNode(new object[] { i.ToString() + "年" }, top, i);
+            }
         }
 
         /// <summary>
-        /// 查询数据
+        /// 载入付款记录
         /// </summary>
-        private void SearchData()
+        /// <param name="year">年度</param>
+        private void LoadPayment(int year)
         {
-            var temp = this.paymentList;
-
-            if (this.dpStart.EditValue != null)
-                temp = temp.Where(r => r.PaidDate >= this.dpStart.DateTime).ToList();
-
-            if (this.dpEnd.EditValue != null)
-                temp = temp.Where(r => r.PaidDate <= this.dpEnd.DateTime).ToList();
-
-            this.paymentGrid.DataSource = temp;
+            if (year == 0)
+            {
+                var paymentList = BusinessFactory<PaymentBusiness>.Instance.FindAll().ToList();
+                this.paymentGrid.DataSource = paymentList;
+            }
+            else
+            {
+                var paymentList = BusinessFactory<PaymentBusiness>.Instance.FindByYear(year).ToList();
+                this.paymentGrid.DataSource = paymentList;
+            }
         }
         #endregion //Function
 
         #region Event
         /// <summary>
-        /// 查询
+        /// 年度选择
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void trYear_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
-            SearchData();
+            var year = Convert.ToInt32(e.Node.Tag);
+            LoadPayment(year);            
         }
 
         /// <summary>
@@ -87,7 +92,26 @@ namespace Poseidon.Finance.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmPaymentAdd));
-            this.LoadPayment();
+
+            var node = this.trYear.FocusedNode;
+            if (node != null)
+                this.LoadPayment(Convert.ToInt32(node.Tag));
+            else
+                this.LoadPayment(0);
+        }
+       
+        /// <summary>
+        /// 付款记录选择
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
+        private void paymentGrid_RowSelected(object arg1, EventArgs arg2)
+        {
+            var payment = this.paymentGrid.GetCurrentSelect();
+            if (payment == null)
+                this.paymentRecordGrid.Clear();
+            else
+                this.paymentRecordGrid.DataSource = payment.Records;
         }
         #endregion //Event
     }

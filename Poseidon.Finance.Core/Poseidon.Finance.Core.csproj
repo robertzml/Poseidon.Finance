@@ -91,6 +91,7 @@
     <Compile Include="IDAL\IFundRepository.cs" />
     <Compile Include="IDAL\IPaymentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\FinanceConstant.cs" />
     <Compile Include="Utility\IExpenseBusiness.cs" />
     <Compile Include="Utility\IExpenseEntity.cs" />
   </ItemGroup>

@@ -29,6 +29,18 @@ namespace Poseidon.Finance.Core.BL
 
         #region Method
         /// <summary>
+        /// 按年度获取付款记录
+        /// </summary>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        public IEnumerable<Payment> FindByYear(int year)
+        {
+            return this.baseDal.FindAll().Where(r => r.PaidDate.Year == year);
+        }
+        #endregion //Method
+
+        #region CRUD
+        /// <summary>
         /// 添加付款信息
         /// </summary>
         /// <param name="entity">实体对象</param>
@@ -83,6 +95,6 @@ namespace Poseidon.Finance.Core.BL
             };
             return base.Update(entity);
         }
-        #endregion //Method
+        #endregion //CRUD
     }
 }

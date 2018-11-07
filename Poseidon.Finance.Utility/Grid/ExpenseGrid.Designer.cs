@@ -45,6 +45,7 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPaidFee = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -66,6 +67,7 @@
             this.colSerialNumber,
             this.colSummary,
             this.colAmount,
+            this.colPaidFee,
             this.colCategoryNumber,
             this.colCategoryName,
             this.colOperator,
@@ -132,7 +134,7 @@
             this.colCategoryNumber.FieldName = "CategoryNumber";
             this.colCategoryNumber.Name = "colCategoryNumber";
             this.colCategoryNumber.Visible = true;
-            this.colCategoryNumber.VisibleIndex = 4;
+            this.colCategoryNumber.VisibleIndex = 5;
             // 
             // colCategoryName
             // 
@@ -140,7 +142,7 @@
             this.colCategoryName.FieldName = "CategoryName";
             this.colCategoryName.Name = "colCategoryName";
             this.colCategoryName.Visible = true;
-            this.colCategoryName.VisibleIndex = 5;
+            this.colCategoryName.VisibleIndex = 6;
             // 
             // colOperator
             // 
@@ -148,15 +150,15 @@
             this.colOperator.FieldName = "Operator";
             this.colOperator.Name = "colOperator";
             this.colOperator.Visible = true;
-            this.colOperator.VisibleIndex = 6;
+            this.colOperator.VisibleIndex = 7;
             // 
             // colExpenseDate
             // 
-            this.colExpenseDate.Caption = "用款日期";
+            this.colExpenseDate.Caption = "费用日期";
             this.colExpenseDate.FieldName = "ExpenseDate";
             this.colExpenseDate.Name = "colExpenseDate";
             this.colExpenseDate.Visible = true;
-            this.colExpenseDate.VisibleIndex = 7;
+            this.colExpenseDate.VisibleIndex = 8;
             // 
             // colIsPaid
             // 
@@ -164,7 +166,7 @@
             this.colIsPaid.FieldName = "IsPaid";
             this.colIsPaid.Name = "colIsPaid";
             this.colIsPaid.Visible = true;
-            this.colIsPaid.VisibleIndex = 8;
+            this.colIsPaid.VisibleIndex = 9;
             // 
             // colModuleName
             // 
@@ -172,7 +174,7 @@
             this.colModuleName.FieldName = "ModuleName";
             this.colModuleName.Name = "colModuleName";
             this.colModuleName.Visible = true;
-            this.colModuleName.VisibleIndex = 9;
+            this.colModuleName.VisibleIndex = 10;
             // 
             // colAssemblyName
             // 
@@ -180,7 +182,7 @@
             this.colAssemblyName.FieldName = "AssemblyName";
             this.colAssemblyName.Name = "colAssemblyName";
             this.colAssemblyName.Visible = true;
-            this.colAssemblyName.VisibleIndex = 10;
+            this.colAssemblyName.VisibleIndex = 11;
             // 
             // colCollectionName
             // 
@@ -188,7 +190,7 @@
             this.colCollectionName.FieldName = "CollectionName";
             this.colCollectionName.Name = "colCollectionName";
             this.colCollectionName.Visible = true;
-            this.colCollectionName.VisibleIndex = 11;
+            this.colCollectionName.VisibleIndex = 12;
             // 
             // colDocumentId
             // 
@@ -196,7 +198,7 @@
             this.colDocumentId.FieldName = "DocumentId";
             this.colDocumentId.Name = "colDocumentId";
             this.colDocumentId.Visible = true;
-            this.colDocumentId.VisibleIndex = 12;
+            this.colDocumentId.VisibleIndex = 13;
             // 
             // colRemark
             // 
@@ -204,7 +206,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 13;
+            this.colRemark.VisibleIndex = 14;
             // 
             // colStatus
             // 
@@ -216,6 +218,14 @@
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            // 
+            // colPaidFee
+            // 
+            this.colPaidFee.Caption = "已支付金额";
+            this.colPaidFee.FieldName = "PaidFee";
+            this.colPaidFee.Name = "colPaidFee";
+            this.colPaidFee.Visible = true;
+            this.colPaidFee.VisibleIndex = 4;
             // 
             // ExpenseGrid
             // 
@@ -252,5 +262,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colPaidFee;
     }
 }

@@ -129,17 +129,16 @@ namespace Poseidon.Finance.ClientDx
             entity.FundName = fund.Name;
             entity.FundNumber = fund.Number;
             entity.Summary = this.txtSummary.Text;
-            entity.Operator = this.txtOperator.Text;         
+            entity.Operator = this.txtOperator.Text;
+            entity.PaidFee = this.spPaidFee.Value;
             entity.PaidDate = this.dpPaidDate.DateTime;
             entity.Remark = this.txtRemark.Text;
 
-            entity.Records = this.paymentRecordGrid.DataSource;            
+            entity.Records = this.paymentRecordGrid.DataSource;
             foreach (var item in entity.Records)
             {
                 item.Remark = item.Remark ?? "";
             }
-
-            entity.PaidFee = entity.Records.Sum(r => r.PaidFee);
         }
         #endregion //Function
 
@@ -169,7 +168,18 @@ namespace Poseidon.Finance.ClientDx
             if (select != null)
             {
                 this.paymentRecordGrid.DataSource.Remove(select);
+                this.paymentRecordGrid.UpdateBindingData();
             }
+        }
+
+        /// <summary>
+        /// 求和
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+            this.spPaidFee.Value = this.paymentRecordGrid.DataSource.Sum(r => r.PaidFee);
         }
 
         /// <summary>
