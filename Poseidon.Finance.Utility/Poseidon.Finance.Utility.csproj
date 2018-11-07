@@ -111,6 +111,12 @@
     <Compile Include="Grid\PaymentRecordGrid.Designer.cs">
       <DependentUpon>PaymentRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\PaymentInfoModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\PaymentInfoModule.Designer.cs">
+      <DependentUpon>PaymentInfoModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Finance.Core.DL.PaymentRecord.datasource" />
     <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Mod\PaymentInfoModule.resx">
+      <DependentUpon>PaymentInfoModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

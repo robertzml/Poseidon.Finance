@@ -78,7 +78,7 @@ namespace Poseidon.Finance.Core.DL
     }
 
     /// <summary>
-    /// 付款记录类
+    /// 付款明细类
     /// </summary>
     public class PaymentRecord : BaseEntity
     {

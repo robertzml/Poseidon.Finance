@@ -181,7 +181,6 @@
             this.menuViewDetails.Name = "menuViewDetails";
             this.menuViewDetails.Size = new System.Drawing.Size(180, 22);
             this.menuViewDetails.Text = "查看明细";
-            this.menuViewDetails.Click += new System.EventHandler(this.menuViewDetails_Click);
             // 
             // PaymentGrid
             // 

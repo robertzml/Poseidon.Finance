@@ -43,6 +43,8 @@
             this.colYear = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.paymentRecordGrid = new Poseidon.Finance.Utility.PaymentRecordGrid();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.paymentInfoMod = new Poseidon.Finance.Utility.PaymentInfoModule();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -58,6 +60,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -69,7 +73,8 @@
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupControl3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupControl4, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl4, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl5, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -111,6 +116,7 @@
             this.btnRevert.StyleController = this.layoutControl1;
             this.btnRevert.TabIndex = 8;
             this.btnRevert.Text = "撤回付款";
+            this.btnRevert.Click += new System.EventHandler(this.btnRevert_Click);
             // 
             // btnAdd
             // 
@@ -225,7 +231,7 @@
             // 
             this.groupControl4.Controls.Add(this.paymentRecordGrid);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl4.Location = new System.Drawing.Point(203, 333);
+            this.groupControl4.Location = new System.Drawing.Point(565, 333);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(356, 224);
             this.groupControl4.TabIndex = 3;
@@ -255,6 +261,24 @@
             this.paymentRecordGrid.Size = new System.Drawing.Size(352, 201);
             this.paymentRecordGrid.TabIndex = 0;
             // 
+            // groupControl5
+            // 
+            this.groupControl5.Controls.Add(this.paymentInfoMod);
+            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl5.Location = new System.Drawing.Point(203, 333);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(356, 224);
+            this.groupControl5.TabIndex = 4;
+            this.groupControl5.Text = "付款信息";
+            // 
+            // paymentInfoMod
+            // 
+            this.paymentInfoMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.paymentInfoMod.Location = new System.Drawing.Point(2, 21);
+            this.paymentInfoMod.Name = "paymentInfoMod";
+            this.paymentInfoMod.Size = new System.Drawing.Size(352, 201);
+            this.paymentInfoMod.TabIndex = 0;
+            // 
             // FrmPaymentManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -278,6 +302,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -299,5 +325,7 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn colYear;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private Utility.PaymentRecordGrid paymentRecordGrid;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private Utility.PaymentInfoModule paymentInfoMod;
     }
 }

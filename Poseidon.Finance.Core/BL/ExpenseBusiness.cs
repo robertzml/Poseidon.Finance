@@ -47,6 +47,16 @@ namespace Poseidon.Finance.Core.BL
         }
 
         /// <summary>
+        /// 按年度获取付款记录
+        /// </summary>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        public IEnumerable<Expense> FindByYear(int year)
+        {
+            return this.baseDal.FindAll().Where(r => r.ExpenseDate.Year == year);
+        }
+
+        /// <summary>
         /// 费用记录付款
         /// </summary>
         /// <param name="id">费用ID</param>
@@ -68,6 +78,24 @@ namespace Poseidon.Finance.Core.BL
             return result.success;
         }
 
+        /// <summary>
+        /// 撤回费用记录付款
+        /// </summary>
+        /// <param name="id">费用ID</param>
+        /// <param name="paidFee">支付费用</param>
+        /// <returns></returns>
+        public bool UnpayExpense(string id, decimal paidFee)
+        {
+            var entity = this.baseDal.FindById(id);
+            entity.PaidFee -= paidFee;
+            entity.IsPaid = false;
+
+            var result = this.baseDal.Update(entity);
+            return result.success;
+        }
+        #endregion //Method
+
+        #region CRUD
         /// <summary>
         /// 添加费用信息
         /// </summary>
@@ -110,6 +138,6 @@ namespace Poseidon.Finance.Core.BL
             };
             return base.Update(entity);
         }
-        #endregion //Method
+        #endregion //CRUD
     }
 }

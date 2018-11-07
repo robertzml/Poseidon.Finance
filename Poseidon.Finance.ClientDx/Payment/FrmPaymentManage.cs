@@ -11,6 +11,8 @@ using System.Windows.Forms;
 namespace Poseidon.Finance.ClientDx
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
+    using Poseidon.Common;
     using Poseidon.Winform.Base;
     using Poseidon.Finance.Core.BL;
     using Poseidon.Finance.Core.DL;
@@ -47,7 +49,7 @@ namespace Poseidon.Finance.ClientDx
             var top = this.trYear.AppendNode(new object[] { "全部" }, -1, 0);
 
             int nowYear = DateTime.Now.Year;
-            for(int i = nowYear; i >= FinanceConstant.StartYear; i--)
+            for (int i = nowYear; i >= FinanceConstant.StartYear; i--)
             {
                 this.trYear.AppendNode(new object[] { i.ToString() + "年" }, top, i);
             }
@@ -81,7 +83,7 @@ namespace Poseidon.Finance.ClientDx
         private void trYear_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
             var year = Convert.ToInt32(e.Node.Tag);
-            LoadPayment(year);            
+            LoadPayment(year);
         }
 
         /// <summary>
@@ -99,7 +101,46 @@ namespace Poseidon.Finance.ClientDx
             else
                 this.LoadPayment(0);
         }
-       
+
+        /// <summary>
+        /// 撤回付款
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRevert_Click(object sender, EventArgs e)
+        {
+            var payment = this.paymentGrid.GetCurrentSelect();
+            if (payment == null)
+                return;
+
+            try
+            {
+                if (MessageUtil.ConfirmYesNo($"是否撤回'{payment.SerialNumber}'付款记录") == DialogResult.Yes)
+                {
+                    var result = BusinessFactory<PaymentBusiness>.Instance.Revert(payment);
+                    if (result.success)
+                    {
+                        MessageUtil.ShowInfo("撤回成功");
+
+                        var node = this.trYear.FocusedNode;
+                        if (node != null)
+                            this.LoadPayment(Convert.ToInt32(node.Tag));
+                        else
+                            this.LoadPayment(0);
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("撤回失败: " + result.errorMessage);
+                    }
+                }
+            }
+            catch (PoseidonException pe)
+            {
+                Logger.Instance.Exception("撤回付款记录失败", pe);
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
+        }
+
         /// <summary>
         /// 付款记录选择
         /// </summary>
@@ -109,9 +150,15 @@ namespace Poseidon.Finance.ClientDx
         {
             var payment = this.paymentGrid.GetCurrentSelect();
             if (payment == null)
+            {
+                this.paymentInfoMod.Clear();
                 this.paymentRecordGrid.Clear();
+            }
             else
+            {
+                this.paymentInfoMod.Init(payment);
                 this.paymentRecordGrid.DataSource = payment.Records;
+            }
         }
         #endregion //Event
     }

@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtOperator = new DevExpress.XtraEditors.TextEdit();
             this.dpExpenseDate = new DevExpress.XtraEditors.DateEdit();
             this.tluCategory = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsCategory = new System.Windows.Forms.BindingSource(this.components);
+            this.bsCategory = new System.Windows.Forms.BindingSource();
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colNumber = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -147,6 +146,7 @@
             this.dpExpenseDate.EditValue = null;
             this.dpExpenseDate.Location = new System.Drawing.Point(63, 60);
             this.dpExpenseDate.Name = "dpExpenseDate";
+            this.dpExpenseDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpExpenseDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpExpenseDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -183,11 +183,9 @@
             this.colSort,
             this.colRemark,
             this.colStatus});
-            this.treeListLookUpEdit1TreeList.DataSource = this.bsCategory;
             this.treeListLookUpEdit1TreeList.KeyFieldName = "Id";
             this.treeListLookUpEdit1TreeList.Location = new System.Drawing.Point(0, 0);
             this.treeListLookUpEdit1TreeList.Name = "treeListLookUpEdit1TreeList";
-            this.treeListLookUpEdit1TreeList.OptionsBehavior.EnableFiltering = true;
             this.treeListLookUpEdit1TreeList.OptionsBehavior.PopulateServiceColumns = true;
             this.treeListLookUpEdit1TreeList.OptionsView.ShowIndentAsRowStyle = true;
             this.treeListLookUpEdit1TreeList.ParentFieldName = "ParentId";
@@ -267,7 +265,6 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(450, 219);
             this.layoutControlGroup1.TextVisible = false;

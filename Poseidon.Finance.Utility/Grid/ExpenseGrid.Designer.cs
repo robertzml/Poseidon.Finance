@@ -125,6 +125,8 @@
             this.colAmount.Caption = "金额";
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
+            this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
             this.colAmount.Visible = true;
             this.colAmount.VisibleIndex = 3;
             // 
@@ -224,6 +226,8 @@
             this.colPaidFee.Caption = "已支付金额";
             this.colPaidFee.FieldName = "PaidFee";
             this.colPaidFee.Name = "colPaidFee";
+            this.colPaidFee.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PaidFee", "合计={0:0.##}")});
             this.colPaidFee.Visible = true;
             this.colPaidFee.VisibleIndex = 4;
             // 

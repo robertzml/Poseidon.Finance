@@ -37,6 +37,23 @@ namespace Poseidon.Finance.Core.BL
         {
             return this.baseDal.FindAll().Where(r => r.PaidDate.Year == year);
         }
+
+        /// <summary>
+        /// 撤回付款
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public (bool success, string errorMessage) Revert(Payment entity)
+        {
+            ExpenseBusiness expenseBusiness = new ExpenseBusiness();
+
+            foreach (var item in entity.Records)
+            {
+                expenseBusiness.UnpayExpense(item.ExpenseId, item.PaidFee);
+            }
+
+            return this.baseDal.Delete(entity);
+        }
         #endregion //Method
 
         #region CRUD
