@@ -49,6 +49,7 @@ namespace Poseidon.Finance.Utility
             this.txtPaidFee.Text = this.currentPayment.PaidFee.ToString();
             this.chkIsPost.Checked = this.currentPayment.IsPost;
             this.txtPaidDate.Text = this.currentPayment.PaidDate.ToDateString();
+            this.txtRecipient.Text = this.currentPayment.Recipient;
             this.txtOperator.Text = this.currentPayment.Operator;
             this.txtCreator.Text = this.currentPayment.CreateBy.Name;
             this.txtCreateTime.Text = this.currentPayment.CreateBy.Time.ToDateTimeString();
@@ -78,9 +79,10 @@ namespace Poseidon.Finance.Utility
             this.txtSummary.Text = "";
             this.txtFundName.Text = "";
             this.txtFundNumber.Text = "";
-            this.txtPaidFee.Text = "";           
+            this.txtPaidFee.Text = "";
             this.chkIsPost.Checked = false;
             this.txtPaidDate.Text = "";
+            this.txtRecipient.Text = "";
             this.txtOperator.Text = "";
             this.txtCreator.Text = "";
             this.txtCreateTime.Text = "";

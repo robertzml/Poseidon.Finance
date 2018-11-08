@@ -45,7 +45,6 @@
             this.txtSummary = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -53,10 +52,13 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtRecipient = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -76,7 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
@@ -84,10 +85,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecipient.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -101,6 +105,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtRecipient);
             this.layoutControl1.Controls.Add(this.chkIsPost);
             this.layoutControl1.Controls.Add(this.txtSerialNumber);
             this.layoutControl1.Controls.Add(this.txtFundNumber);
@@ -124,11 +129,11 @@
             // 
             // chkIsPost
             // 
-            this.chkIsPost.Location = new System.Drawing.Point(270, 60);
+            this.chkIsPost.Location = new System.Drawing.Point(444, 60);
             this.chkIsPost.Name = "chkIsPost";
             this.chkIsPost.Properties.Caption = "是否入账";
             this.chkIsPost.Properties.ReadOnly = true;
-            this.chkIsPost.Size = new System.Drawing.Size(244, 19);
+            this.chkIsPost.Size = new System.Drawing.Size(70, 19);
             this.chkIsPost.StyleController = this.layoutControl1;
             this.chkIsPost.TabIndex = 22;
             // 
@@ -156,12 +161,12 @@
             // 
             // txtPaidDate
             // 
-            this.txtPaidDate.Location = new System.Drawing.Point(87, 84);
+            this.txtPaidDate.Location = new System.Drawing.Point(345, 60);
             this.txtPaidDate.Name = "txtPaidDate";
             this.txtPaidDate.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtPaidDate.Properties.Appearance.Options.UseBackColor = true;
             this.txtPaidDate.Properties.ReadOnly = true;
-            this.txtPaidDate.Size = new System.Drawing.Size(179, 20);
+            this.txtPaidDate.Size = new System.Drawing.Size(95, 20);
             this.txtPaidDate.StyleController = this.layoutControl1;
             this.txtPaidDate.TabIndex = 17;
             // 
@@ -272,7 +277,6 @@
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.layoutControlItem2,
-            this.layoutControlItem5,
             this.layoutControlItem12,
             this.layoutControlItem9,
             this.layoutControlItem1,
@@ -281,7 +285,9 @@
             this.layoutControlItem8,
             this.layoutControlItem10,
             this.layoutControlItem3,
-            this.layoutControlItem11});
+            this.layoutControlItem11,
+            this.layoutControlItem5,
+            this.layoutControlItem13});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(526, 287);
             this.layoutControlGroup1.TextVisible = false;
@@ -294,15 +300,6 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(506, 123);
             this.layoutControlItem6.Text = "备注";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(72, 14);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.txtFundName;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(258, 24);
-            this.layoutControlItem3.Text = "经费本名称";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(72, 14);
             // 
             // layoutControlItem7
             // 
@@ -325,9 +322,9 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtPaidDate;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem5.Location = new System.Drawing.Point(258, 48);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(258, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(174, 24);
             this.layoutControlItem5.Text = "付款日期";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -361,20 +358,11 @@
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.chkIsPost;
-            this.layoutControlItem15.Location = new System.Drawing.Point(258, 48);
+            this.layoutControlItem15.Location = new System.Drawing.Point(432, 48);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(248, 24);
+            this.layoutControlItem15.Size = new System.Drawing.Size(74, 24);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.txtFundNumber;
-            this.layoutControlItem11.Location = new System.Drawing.Point(258, 24);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(248, 24);
-            this.layoutControlItem11.Text = "经费本项目号";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(72, 14);
             // 
             // layoutControlItem4
             // 
@@ -403,6 +391,44 @@
             this.layoutControlItem10.Text = "编辑时间";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(72, 14);
             // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txtFundName;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(258, 24);
+            this.layoutControlItem3.Text = "经费本名称";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(72, 14);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.txtFundNumber;
+            this.layoutControlItem11.Location = new System.Drawing.Point(258, 24);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(248, 24);
+            this.layoutControlItem11.Text = "经费本项目号";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(72, 14);
+            // 
+            // txtRecipient
+            // 
+            this.txtRecipient.Location = new System.Drawing.Point(87, 84);
+            this.txtRecipient.Name = "txtRecipient";
+            this.txtRecipient.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRecipient.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRecipient.Properties.ReadOnly = true;
+            this.txtRecipient.Size = new System.Drawing.Size(179, 20);
+            this.txtRecipient.StyleController = this.layoutControl1;
+            this.txtRecipient.TabIndex = 23;
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.txtRecipient;
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(258, 24);
+            this.layoutControlItem13.Text = "收款方";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(72, 14);
+            // 
             // PaymentInfoModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -429,7 +455,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
@@ -437,10 +462,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecipient.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -476,5 +504,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraEditors.TextEdit txtRecipient;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
     }
 }

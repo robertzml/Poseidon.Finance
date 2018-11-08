@@ -129,6 +129,7 @@ namespace Poseidon.Finance.ClientDx
             entity.FundName = fund.Name;
             entity.FundNumber = fund.Number;
             entity.Summary = this.txtSummary.Text;
+            entity.Recipient = this.txtRecipient.Text;
             entity.Operator = this.txtOperator.Text;
             entity.PaidFee = this.spPaidFee.Value;
             entity.PaidDate = this.dpPaidDate.DateTime;

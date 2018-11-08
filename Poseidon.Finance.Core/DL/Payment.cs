@@ -46,6 +46,12 @@ namespace Poseidon.Finance.Core.DL
         public string Summary { get; set; }
 
         /// <summary>
+        /// 收款方
+        /// </summary>
+        [Display(Name = "收款方")]
+        public string Recipient { get; set; }
+
+        /// <summary>
         /// 经办人
         /// </summary>
         [Display(Name = "经办人")]
