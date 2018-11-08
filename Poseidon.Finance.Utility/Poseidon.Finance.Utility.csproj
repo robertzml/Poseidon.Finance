@@ -75,6 +75,12 @@
     <Compile Include="BaseExpenseControl.Designer.cs">
       <DependentUpon>BaseExpenseControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmExpenseBind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmExpenseBind.Designer.cs">
+      <DependentUpon>FrmExpenseBind.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\ExpenseInfoModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmExpenseAdd.resx">
       <DependentUpon>FrmExpenseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmExpenseBind.resx">
+      <DependentUpon>FrmExpenseBind.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmExpenseView.resx">
       <DependentUpon>FrmExpenseView.cs</DependentUpon>

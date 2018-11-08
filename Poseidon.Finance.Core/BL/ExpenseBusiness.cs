@@ -37,6 +37,15 @@ namespace Poseidon.Finance.Core.BL
         }
 
         /// <summary>
+        /// 获取所有未绑定费用记录
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Expense> FindUnBind()
+        {
+            return this.baseDal.FindListByField("documentId", "");
+        }
+
+        /// <summary>
         /// 按文档ID获取费用记录
         /// </summary>
         /// <param name="documentId">文档ID</param>
@@ -92,6 +101,34 @@ namespace Poseidon.Finance.Core.BL
 
             var result = this.baseDal.Update(entity);
             return result.success;
+        }
+
+        /// <summary>
+        /// 绑定费用记录到业务对象
+        /// </summary>
+        /// <param name="id">费用ID</param>
+        /// <param name="moduleName">模块名称</param>
+        /// <param name="assemblyName">程序集名称</param>
+        /// <param name="collectionName">集合名称</param>
+        /// <param name="documentId">文档ID</param>
+        /// <returns></returns>
+        public (bool success, string errorMessage) BindExpense(string id, string moduleName, string assemblyName, string collectionName, string documentId)
+        {
+            var entity = this.baseDal.FindById(id);
+
+            if (string.IsNullOrEmpty(entity.DocumentId))
+            {
+
+                entity.ModuleName = moduleName;
+                entity.AssemblyName = assemblyName;
+                entity.CollectionName = collectionName;
+                entity.DocumentId = documentId;
+
+                var result = this.baseDal.Update(entity);
+                return result;
+            }
+            else
+                return (false, "该费用记录包含业务对象");
         }
         #endregion //Method
 

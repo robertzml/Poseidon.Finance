@@ -1,6 +1,6 @@
-﻿namespace Poseidon.Finance.ClientDx
+﻿namespace Poseidon.Finance.Utility
 {
-    partial class FrmExpenseSearch
+    partial class FrmExpenseBind
     {
         /// <summary>
         /// Required designer variable.
@@ -68,7 +68,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(884, 352);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "费用记录";
             // 
             // expenseGrid
@@ -96,15 +96,15 @@
             this.expenseGrid.Size = new System.Drawing.Size(880, 329);
             this.expenseGrid.TabIndex = 0;
             // 
-            // FrmExpenseSearch
+            // FrmExpenseBind
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 412);
             this.MaximumSize = new System.Drawing.Size(900, 450);
             this.MinimumSize = new System.Drawing.Size(900, 450);
-            this.Name = "FrmExpenseSearch";
-            this.Text = "选择费用记录";
+            this.Name = "FrmExpenseBind";
+            this.Text = "费用绑定";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -116,7 +116,8 @@
         }
 
         #endregion
+
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private Utility.ExpenseGrid expenseGrid;
+        private ExpenseGrid expenseGrid;
     }
 }
