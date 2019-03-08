@@ -14,5 +14,11 @@ namespace Poseidon.Finance.Core.IDAL
     /// </summary>
     internal interface IPaymentRepository : IBaseDAL<Payment>
     {
+        /// <summary>
+        /// 根据费用获取付款记录
+        /// </summary>
+        /// <param name="expenseId">费用ID</param>
+        /// <returns></returns>
+        List<PaymentRecord> GetPaymentRecordsByExpense(string expenseId);
     }
 }

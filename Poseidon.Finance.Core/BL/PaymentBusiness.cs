@@ -54,6 +54,17 @@ namespace Poseidon.Finance.Core.BL
 
             return this.baseDal.Delete(entity);
         }
+
+        /// <summary>
+        /// 根据费用获取付款记录
+        /// </summary>
+        /// <param name="expenseId">费用ID</param>
+        /// <returns></returns>
+        public List<PaymentRecord> GetPaymentRecordsByExpense(string expenseId)
+        {
+            var dal = this.baseDal as IPaymentRepository;
+            return dal.GetPaymentRecordsByExpense(expenseId);
+        }
         #endregion //Method
 
         #region CRUD

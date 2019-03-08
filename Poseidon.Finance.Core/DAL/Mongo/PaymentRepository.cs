@@ -151,6 +151,27 @@ namespace Poseidon.Finance.Core.DAL.Mongo
 
         #region Method
         /// <summary>
+        /// 根据费用获取付款记录
+        /// </summary>
+        /// <param name="expenseId">费用ID</param>
+        /// <returns></returns>
+        public List<PaymentRecord> GetPaymentRecordsByExpense(string expenseId)
+        {
+            var filter = Builders<BsonDocument>.Filter.Eq("records.expenseId", expenseId);
+            var payments = this.FindList(filter);
+
+            List<PaymentRecord> data = new List<PaymentRecord>();
+
+            foreach (var item in payments)
+            {
+                var record = item.Records.Where(r => r.ExpenseId == expenseId);
+                data.AddRange(record);
+            }
+
+            return data;
+        }
+
+        /// <summary>
         /// 添加付款信息
         /// </summary>
         /// <param name="entity">实体对象</param>

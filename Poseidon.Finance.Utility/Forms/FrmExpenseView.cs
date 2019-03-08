@@ -66,6 +66,9 @@ namespace Poseidon.Finance.Utility
         /// </summary>
         private void ShowBiz()
         {
+            if (string.IsNullOrEmpty(currentExpense.ModuleName))
+                return;
+
             var control = Reflect<BaseExpenseControl>.Create(this.currentExpense.ModuleName, this.currentExpense.AssemblyName, false);
             control.Init(this.currentExpense.DocumentId);
 

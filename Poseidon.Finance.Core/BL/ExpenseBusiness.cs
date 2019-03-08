@@ -175,6 +175,23 @@ namespace Poseidon.Finance.Core.BL
             };
             return base.Update(entity);
         }
+
+        /// <summary>
+        /// 删除费用记录
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override (bool success, string errorMessage) Delete(Expense entity)
+        {
+            PaymentBusiness paymentBusiness = new PaymentBusiness();
+            var records = paymentBusiness.GetPaymentRecordsByExpense(entity.Id);
+            if (records.Count > 0)
+            {
+                return (false, "存在付款记录");
+            }
+
+            return base.Delete(entity);
+        }
         #endregion //CRUD
     }
 }

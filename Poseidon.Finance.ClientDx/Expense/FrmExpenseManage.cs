@@ -11,6 +11,8 @@ using System.Windows.Forms;
 namespace Poseidon.Finance.ClientDx
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
+    using Poseidon.Common;
     using Poseidon.Winform.Base;
     using Poseidon.Finance.Core.BL;
     using Poseidon.Finance.Core.DL;
@@ -114,6 +116,44 @@ namespace Poseidon.Finance.ClientDx
                 this.LoadExpense(Convert.ToInt32(node.Tag));
             else
                 this.LoadExpense(0);
+        }
+
+        /// <summary>
+        /// 删除费用记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var expense = this.expenseGrid.GetCurrentSelect();
+            if (expense == null)
+                return;
+
+            try
+            {
+                if (MessageUtil.ConfirmYesNo($"是否删除'{expense.SerialNumber}'费用记录") == DialogResult.Yes)
+                {
+                    var result = BusinessFactory<ExpenseBusiness>.Instance.Delete(expense);
+                    if (result.success)
+                    {
+                        MessageUtil.ShowInfo("删除成功");
+                        var node = this.trYear.FocusedNode;
+                        if (node != null)
+                            this.LoadExpense(Convert.ToInt32(node.Tag));
+                        else
+                            this.LoadExpense(0);
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除失败: " + result.errorMessage);
+                    }
+                }
+            }
+            catch (PoseidonException pe)
+            {
+                Logger.Instance.Exception("删除费用记录失败", pe);
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
         }
         #endregion //Event
     }
